@@ -6,7 +6,8 @@ import Intro from './intro'
 import Business from './business'
 
 class App extends Component {
-  getBusiness = async () =>{
+  getBusiness = async (e) =>{
+    e.preventDefault()
     //make the api call
     const api_call= await fetch("https://we-connect-muru.herokuapp.com/api/v2/businesses")
     //turn response to json
@@ -19,7 +20,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Intro />
-        <Business />
+        <Business getBusiness={this.getBusiness}/>
       </div>
     );
   }
