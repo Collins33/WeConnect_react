@@ -23,7 +23,7 @@ class Login extends Component {
                     <button className="btn btn-info form-button" type="submit">Log in</button>
                 </form>
                 <p className="text-center">Don't have an account?</p>
-                <p className="text-center"><a href="registration.html"><strong>Sign-up</strong></a></p>
+                <p className="text-center"><a href="/signup"><strong>Sign-up</strong></a></p>
             </div>
         </div>
         </div>

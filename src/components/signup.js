@@ -32,7 +32,7 @@ class Signup extends Component {
                     <button className="btn btn-info form-button" type="submit">SIGN UP</button>
                 </form>
                 <p className="text-center">By signing up, you agree to the terms and conditions</p>
-                <p className="text-center">Already signed up? <a href="login.html"><strong>Log-in</strong></a></p>
+                <p className="text-center">Already signed up? <a href="/login"><strong>Log-in</strong></a></p>
             </div>
         </div>
         </div>
