@@ -5,6 +5,7 @@ import Navbar from './navbar'
 import Intro from './intro'
 import Business from './business'
 import Search from './search_business'
+import Footer from './footer'
 
 class App extends Component {
   getBusiness = async (e) =>{
@@ -32,6 +33,7 @@ class App extends Component {
         <Intro />
         <Search searchBusiness={this.searchBusiness}/>
         <Business getBusiness={this.getBusiness}/>
+        <Footer />
       </div>
     );
   }
