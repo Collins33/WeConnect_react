@@ -7,8 +7,8 @@ class Business extends Component {
     return (
         <div className = "row">
         <h2 className = "text-center">
-        <form onSubmit={this.props.getBusiness}>
-        <button class = "btn btn-success" type="submit">SEE BUSINESSES</button>
+          <form onSubmit={this.props.getBusiness}>
+            <button class = "btn btn-success" type="submit">SEE BUSINESSES</button>
         </form>
         </h2>
         </div>
