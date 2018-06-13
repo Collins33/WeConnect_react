@@ -6,8 +6,34 @@ import Intro from './intro'
 import Business from './business'
 import Search from './search_business'
 import Footer from './footer'
+import axios from "axios";
 
 class App extends Component {
+  //set the default State object
+  state = {
+    businesses:[]
+  }
+
+  //add the componentDidMount lifecylce method
+  componentDidMount(){
+    axios.get("https://we-connect-muru.herokuapp.com/api/v2/businesses")
+    .then(response =>{
+      //create array of businesses with the information you need
+      const newBusiness = response.data.map(c => {
+        return{
+          name: c.name,
+          contact: c.contact
+        }
+      })
+
+      //create a new state without mutating the original state
+      const newState = Object.assign({}, this.state, {businesses: newBusiness})
+      //store the new state in the component's state
+      this.setState(newState)
+    })
+    .catch(error => console.log(error));
+  }
+
   getBusiness = async (e) =>{
     e.preventDefault()
     //make the api call
