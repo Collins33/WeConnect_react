@@ -6,6 +6,7 @@ import Intro from './intro'
 import Business from './business'
 import Search from './search_business'
 import Footer from './footer'
+import BusinessList from './business_list'
 import axios from "axios";
 
 class App extends Component {
@@ -59,6 +60,7 @@ class App extends Component {
         <Intro />
         <Search searchBusiness={this.searchBusiness}/>
         <Business getBusiness={this.getBusiness}/>
+        <BusinessList businesses={this.state.businesses}/>
         <Footer />
       </div>
     );
