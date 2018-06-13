@@ -7,7 +7,8 @@ import { browserHistory, Router, Route } from 'react-router';
 import About from "./components/about";
 import Dashboard from "./components/dashboard";
 import Signup from "./components/signup";
-import Login from "./components/login"
+import Login from "./components/login";
+import SearchResults from './components/search_results';
 
 render( 
 <Router history={browserHistory}>
@@ -16,6 +17,7 @@ render(
 <Route path="/dashboard" component={Dashboard}/>
 <Route path="/signup" component={Signup}/>
 <Route path="/login" component={Login}/>
+<Route path="/search" component={SearchResults}/>
 </Router>, 
 document.getElementById('root'));
 registerServiceWorker();

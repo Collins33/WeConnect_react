@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class Search extends Component {
@@ -10,7 +9,7 @@ class Search extends Component {
                 <form onSubmit={this.props.searchBusiness}>
                     <div className="form-group">
                        <input className="form-control" placeholder= "Search for a business" type="text" name="search"/>
-                       <button className="btn btn-success">Searh for the business</button>
+                       <a href="/search"><button className="btn btn-success">Searh for the business</button></a>
                     </div>
                 </form>
             </div>
