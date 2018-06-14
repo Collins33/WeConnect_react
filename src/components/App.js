@@ -33,6 +33,7 @@ class App extends Component {
       const newState = Object.assign({}, this.state, {businesses: newBusiness})
       //store the new state in the component's state
       this.setState(newState)
+     
     })
     .catch(error => console.log(error));
   }
