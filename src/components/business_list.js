@@ -13,6 +13,7 @@ class BusinessList extends Component {
       const listItems=businessEntries.map(this.createBusiness)
     return (
       <div className="row">
+      <h1 className="text-center">FEATURED BUSINESSES</h1>
         {listItems}
       </div>        
 
