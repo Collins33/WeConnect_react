@@ -7,12 +7,14 @@ import Business from './business'
 import Search from './search_business'
 import Footer from './footer'
 import BusinessList from './business_list'
+import SearchResults from './search_results'
 import axios from "axios";
 
 class App extends Component {
   //set the default State object
   state = {
-    businesses:[]
+    businesses:[],
+    search_business:[]
   }
 
   //add the componentDidMount lifecylce method
@@ -31,6 +33,7 @@ class App extends Component {
       const newState = Object.assign({}, this.state, {businesses: newBusiness})
       //store the new state in the component's state
       this.setState(newState)
+     
     })
     .catch(error => console.log(error));
   }
@@ -43,6 +46,7 @@ class App extends Component {
     const json_data = await api_call.json()
     //log the data
     console.log(json_data)
+    
   }
 
   searchBusiness = async (e) =>{
@@ -52,7 +56,15 @@ class App extends Component {
     const api_call= await fetch(`https://we-connect-muru.herokuapp.com/api/v2/businesses/searches?q=${search}`)
     const json_data = await api_call.json()
     console.log(json_data)
+    //create array of search results with the information you need
+    
+    //create a new state
+    const newState = Object.assign({}, this.state, {search_business: json_data})
+    //store the new state in the component's state
+    this.setState(newState)
+    console.log(newState)
   }
+
   render() {
     return (
       <div className="App">
