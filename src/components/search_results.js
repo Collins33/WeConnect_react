@@ -39,7 +39,7 @@ class SearchResults extends Component {
       const newState = Object.assign({}, this.state, {search_business: foundBusiness})
       //store the new state in the component's state
       this.setState(newState)
-      console.log("colo")
+      
     })
     .catch(error => console.log(error));
     
