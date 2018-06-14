@@ -17,6 +17,7 @@ class Navbar extends Component {
                     <li><a href="/dashboard">Dashboard</a></li>
                     <li><a href="/signup">Sign up</a></li>
                     <li><a href="/login">Login</a></li>
+                    <li><a href="/search">Search for business</a></li>
                 </ul>
                 </div>
             </nav>
