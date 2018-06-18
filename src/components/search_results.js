@@ -8,6 +8,7 @@ class SearchResults extends Component {
     businesses:[],
     search_business:[]
   }
+
   createBusiness = (item) =>{
     return <div className="col-xs-12 col-md-12 col-lg-12 panel">
     
@@ -19,10 +20,12 @@ class SearchResults extends Component {
     
     </div>
   }
+
   searchBusiness = async (e) =>{
     e.preventDefault()
     //get data from the form
     const search= e.target.elements.search.value;
+    //make get request to return searched business from the api
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/searches?q=${search}`)
     .then(response =>{
       //create an array of businesses with the info you need
