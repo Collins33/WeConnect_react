@@ -1,8 +1,37 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import axios from 'axios';
 
 class Signup extends Component {
+    state = {
+        registration:[]
+    }
+
+    signUp = async (e) =>{
+        e.preventDefault()
+        const email = e.target.elements.email.value;
+        const password = e.target.elements.password.value;
+        const confirm_password = e.target.elements.confirm_password.value;
+        axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/registration', {
+            email: email,
+            password: password,
+            confirm_password: confirm_password
+        }).then(response =>{
+            const register_response = response.data.map(c =>{
+                return {
+                    message: c.message
+                }
+            })
+            //create a new state
+            const newState = Object.assign({}, this.state, {registration: register_response})
+            //store the new state in the component's state
+            this.setState(newState)
+            console.log("registered")
+        })
+        .catch(error => console.log(error));
+    }
+
   render() {
     return (
         <div className="row">
@@ -12,21 +41,18 @@ class Signup extends Component {
         <div className="row form-column">
             <div className="col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center">SIGN-UP</h1>
-                <form>
+                <form onSubmit={this.signUp}>
+                
                     <div className="form-group">
-                      <input className="form-control" placeholder="enter your name" id="name-field" type="text"/>
+                        <input className="form-control" placeholder="enter your email" id="email-field" type="email" name="email" />
                     </div>
 
                     <div className="form-group">
-                        <input className="form-control" placeholder="enter your email" id="email-field" type="email"/>
+                        <input className="form-control" placeholder="enter password" id="password-field" type="password" name="password"/>
                     </div>
 
                     <div className="form-group">
-                        <input className="form-control" placeholder="enter password" id="password-field" type="password"/>
-                    </div>
-
-                    <div className="form-group">
-                        <input className="form-control" placeholder="confirm password" id="confirm-field" type="password"/>
+                        <input className="form-control" placeholder="confirm password" id="confirm-field" type="password" name="confirm_password"/>
                     </div>
 
                     <button className="btn btn-info form-button" type="submit">SIGN UP</button>
