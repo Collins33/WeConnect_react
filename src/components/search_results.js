@@ -9,7 +9,7 @@ class SearchResults extends Component {
     search_business:[]
   }
   createBusiness = (item) =>{
-    return <div className="col-xs-6 col-md-6 col-lg-6 panel">
+    return <div className="col-xs-12 col-md-12 col-lg-12 panel">
     
     <h1>{item.name}</h1>
     <h4>{item.location}</h4>
@@ -52,8 +52,25 @@ class SearchResults extends Component {
 
     return (
         <div className = "row">
+        <div>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">WeConnect</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Businesses</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/search">Search for business</a></li>
+                </ul>
+                </div>
+            </nav>
+        </div>
         <h1 className="text-center">SEARCH FOR A BUSINESS</h1>
-        <div className="col-xs-6 col-md-6 col-lg-6">
+        <div className="col-xs-12 col-md-12 col-lg-12">
                 <form onSubmit={this.searchBusiness}>
                     <div className="form-group">
                        <input className="form-control" placeholder= "Search for a business" type="text" name="search"/>
@@ -61,7 +78,7 @@ class SearchResults extends Component {
                     </div>
                 </form>
         </div>
-        <div className="col-xs-6 col-md-6 col-lg-6">
+        <div className="col-xs-12 col-md-12 col-lg-12">
         {listItems}
         </div>
         </div>
