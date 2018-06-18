@@ -7,7 +7,7 @@ class Signup extends Component {
     state = {
         registration:[]
     }
-
+   
     signUp = async (e) =>{
         e.preventDefault()
         const email = e.target.elements.email.value;
@@ -18,16 +18,8 @@ class Signup extends Component {
             password: password,
             confirm_password: confirm_password
         }).then(response =>{
-            const register_response = response.data.map(c =>{
-                return {
-                    message: c.message
-                }
-            })
-            //create a new state
-            const newState = Object.assign({}, this.state, {registration: register_response})
-            //store the new state in the component's state
-            this.setState(newState)
-            console.log("registered")
+            console.log("registered user successfully")
+            alert("You have successfully registered the user. Login as the user")
         })
         .catch(error => console.log(error));
     }
