@@ -8,7 +8,7 @@ import Dashboard from './components/dashboard';
 import Signup from './components/signup';
 import Login from './components/login';
 import SearchResults from './components/search_results';
-import Business from './components/Business';
+import Business from './components/business';
 // components for routing
 import { browserHistory, Router, Route } from 'react-router';
 
