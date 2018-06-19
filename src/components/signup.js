@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 class Signup extends Component {
     state = {
@@ -19,7 +20,7 @@ class Signup extends Component {
             confirm_password: confirm_password
         }).then(response =>{
             console.log("registered user successfully")
-            alert("You have successfully registered.Login")
+            swal("You have successfully registered.Login")
         })
         .catch(error => console.log(error));
     }
