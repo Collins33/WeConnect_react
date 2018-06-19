@@ -13,14 +13,14 @@ import { browserHistory, Router, Route } from 'react-router';
 
 render(
 
-<Router history={browserHistory}>
-  <Route path="/" component={App} />
-  <Route path="/about" component={About} />
-  <Route path="/dashboard" component={Dashboard} />
-  <Route path="/signup" component={Signup} />
-  <Route path="/login" component={Login} />
-  <Route path="/search" component={SearchResults} />
-</Router>,
+  <Router history={browserHistory}>
+    <Route path="/" component={App} />
+    <Route path="/about" component={About} />
+    <Route path="/dashboard" component={Dashboard} />
+    <Route path="/signup" component={Signup} />
+    <Route path="/login" component={Login} />
+    <Route path="/search" component={SearchResults} />
+  </Router>,
 
 document.getElementById('root'));
 registerServiceWorker();
