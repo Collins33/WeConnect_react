@@ -3,7 +3,6 @@ import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './navbar'
 import Intro from './intro'
-import Business from './business'
 import Search from './search_business'
 import Footer from './footer'
 import BusinessList from './business_list'
@@ -50,8 +49,6 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Intro />
-         {/* bind the state to the business_list component */}
-        <BusinessList businesses={this.state.businesses}/>
         <Footer />
       </div>
     );

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
+import axios from "axios";
+import BusinessList from './business_list'
 
 class Business extends Component {
   // set the default state object
   state = {
-    business: []
+    businesses: []
   }
+
   // add the componentDidMount lifecylce method
   componentDidMount(){
     axios.get("https://we-connect-muru.herokuapp.com/api/v2/businesses")
@@ -32,11 +35,6 @@ class Business extends Component {
     .catch(error => console.log(error));
   }
 
-
-
-
-
-
   render() {
     return (
        <div className = "row">
@@ -55,11 +53,7 @@ class Business extends Component {
                 </ul>
                 </div>
             </nav>
-
-       <h1 className="text-center">ALL BUSINESSES</h1>
-
-
-
+       <BusinessList businesses={this.state.businesses}/>
        </div>
 
     );
