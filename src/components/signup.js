@@ -51,6 +51,7 @@ class Signup extends Component {
                 </form>
                 <p className="text-center">By signing up, you agree to the terms and conditions</p>
                 <p className="text-center">Already signed up? <a href="/login"><strong>Log-in</strong></a></p>
+                <a href = "/"><button className="btn btn-primary">Back Home</button></a>
             </div>
         </div>
         </div>
