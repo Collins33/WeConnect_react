@@ -19,7 +19,7 @@ class Signup extends Component {
             confirm_password: confirm_password
         }).then(response =>{
             console.log("registered user successfully")
-            alert("You have successfully registered the user. Login as the user")
+            alert("You have successfully registered.Login")
         })
         .catch(error => console.log(error));
     }
