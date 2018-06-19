@@ -20,7 +20,12 @@ class Signup extends Component {
             confirm_password: confirm_password
         }).then(response =>{
             console.log("registered user successfully")
-            swal("You have successfully registered.Login")
+            swal({
+                title: "Success!",
+                text: "You successfully registered",
+                icon: "success",
+                button: "Log in",
+              });
         })
         .catch(error => console.log(error));
     }
