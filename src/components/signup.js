@@ -9,7 +9,7 @@ class Signup extends Component {
         registration:[]
     }
    
-    signUp = async (e) =>{
+    signUp = (e) =>{
         e.preventDefault()
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
@@ -20,6 +20,7 @@ class Signup extends Component {
             confirm_password: confirm_password
         }).then(response =>{
             console.log("registered user successfully")
+            // sweet alert pop up
             swal({
                 title: "Success!",
                 text: "You successfully registered",

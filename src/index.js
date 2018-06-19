@@ -8,6 +8,7 @@ import Dashboard from './components/dashboard';
 import Signup from './components/signup';
 import Login from './components/login';
 import SearchResults from './components/search_results';
+import Business from './components/Business';
 // components for routing
 import { browserHistory, Router, Route } from 'react-router';
 
@@ -20,6 +21,7 @@ render(
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
     <Route path="/search" component={SearchResults} />
+    <Route path="/businesses" component={Business} />
   </Router>,
 
 document.getElementById('root'));
