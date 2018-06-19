@@ -9,6 +9,7 @@ class BusinessList extends Component {
       //return each column
       return <div className="col-xs-3 col-md-3 col-lg-3 panel">{item.name}</div>
   }
+  
 
   render() {
       //get the businesses that were passed as props from app.js
