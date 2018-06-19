@@ -23,4 +23,6 @@ render(
   </Router>,
 
 document.getElementById('root'));
+
+// service workers give the app offline capabilities
 registerServiceWorker();

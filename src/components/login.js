@@ -27,9 +27,6 @@ class Login extends Component {
   render() {
     return (
         <div className="row">
-        <h2 className="text-center">
-       Login
-        </h2>
         <div className="row form-column">
             <div className="col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center">LOG-IN</h1>
