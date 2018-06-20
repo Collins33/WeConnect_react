@@ -19,7 +19,8 @@ body {
 .form-column{
   margin-left: 30%;
   margin-right:30%;
-  margin-top:3%;
+  margin-top:15%;
+  
 }
 .footer-row{
   height:200px;
@@ -37,4 +38,10 @@ body {
   margin-top:30px;
   margin-bottom:30px;
   font-family: 'Montserrat', sans-serif;  
+}
+.signuprow{
+  background: #16A085;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F4D03F, #16A085);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F4D03F, #16A085); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 1000px;
 }

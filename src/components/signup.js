@@ -33,7 +33,7 @@ class Signup extends Component {
 
   render() {
     return (
-        <div className="row">
+        <div className="row signuprow">
         <h2 className="text-center">
         
         </h2>
