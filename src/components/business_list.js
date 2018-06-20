@@ -21,7 +21,7 @@ class BusinessList extends Component {
       //map out the array into col-xs-3
       const listItems=businessEntries.map(this.createBusiness)
     return (
-      <div className="row">
+      <div className="row business-row">
       <h1 className="text-center">ALL BUSINESSES</h1>
         {listItems}
       </div>        
