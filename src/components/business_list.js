@@ -7,7 +7,11 @@ class BusinessList extends Component {
   createBusiness = (item) =>{
       //map each item into a column
       //return each column
-      return <div className="col-xs-3 col-md-3 col-lg-3 panel">{item.name}</div>
+      return <div className="col-xs-12 col-md-12 col-lg-12 well business">
+        <h1 className="title">{item.name}</h1>
+        <h3>{item.contact}</h3>
+        <h3>{item.location}</h3>
+        </div>
   }
   
 

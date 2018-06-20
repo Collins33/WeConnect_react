@@ -20,7 +20,8 @@ class Business extends Component {
         return{
           // we are taking business name and business contact from the response
           name: business.name,
-          contact: business.contact
+          contact: business.contact,
+          location : business.location
         }
       })
 
