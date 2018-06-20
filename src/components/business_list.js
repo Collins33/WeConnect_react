@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import {Animated} from 'react-animated-css';
 
 class BusinessList extends Component {
   // method to map out the list
@@ -23,7 +24,9 @@ class BusinessList extends Component {
     return (
       <div className="row business-row">
       <h1 className="text-center">ALL BUSINESSES</h1>
+      <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
         {listItems}
+      </Animated>
       </div>        
 
     );
