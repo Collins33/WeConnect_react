@@ -30,7 +30,7 @@ class Login extends Component {
             <div className="col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center title">WeConnect</h1>
                 <h1 className="text-center">LOG-IN</h1>
-                <form onSubmit={this.login}>
+                <form onSubmit={this.login} className="text-center">
                     <div className="form-group">
                        <input className="form-control" type="text" placeholder="enter email" id="email-login-field" name="email"/>
                     </div>

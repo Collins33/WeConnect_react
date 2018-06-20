@@ -41,7 +41,7 @@ class Signup extends Component {
             <div className="col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center title">WeConnect</h1>
                 <h1 className="text-center">SIGN-UP</h1>
-                <form onSubmit={this.signUp}>
+                <form onSubmit={this.signUp} className="text-center">
                 
                     <div className="form-group">
                         <input className="form-control" placeholder="enter your email" id="email-field" type="email" name="email" />

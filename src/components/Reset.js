@@ -32,7 +32,7 @@ class Reset extends Component {
                 <div className="col-sm-12 col-md-12 col-lg-12 well">
                     <h1 className="text-center title">WeConnect</h1>
                     <h1 className="text-center">RESET PASSWORD</h1>
-                    <form onSubmit={this.reset}>
+                    <form onSubmit={this.reset} className="text-center">
                         <div className="form-group">
                         <input className="form-control" type="text" placeholder="enter email" id="email-login-field" name="email"/>
                         </div>

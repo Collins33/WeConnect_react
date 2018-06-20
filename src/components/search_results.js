@@ -74,7 +74,7 @@ class SearchResults extends Component {
         </div>
         <h1 className="text-center">SEARCH FOR A BUSINESS</h1>
         <div className="col-xs-12 col-md-12 col-lg-12">
-                <form onSubmit={this.searchBusiness}>
+                <form onSubmit={this.searchBusiness} className="text-center">
                     <div className="form-group">
                        <input className="form-control" placeholder= "Search for a business" type="text" name="search"/>
                        <a href="/search"><button className="btn btn-success">Searh for the business</button></a>
