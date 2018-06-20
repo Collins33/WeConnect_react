@@ -30,6 +30,7 @@ class Reset extends Component {
             <div className="row signuprow">
             <div className="row form-column">
                 <div className="col-sm-12 col-md-12 col-lg-12 well">
+                    <h1 className="text-center title">WeConnect</h1>
                     <h1 className="text-center">RESET PASSWORD</h1>
                     <form onSubmit={this.reset}>
                         <div className="form-group">
