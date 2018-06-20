@@ -42,6 +42,7 @@ class Login extends Component {
                 </form>
                 <p className="text-center">Don't have an account?</p>
                 <p className="text-center"><a href="/signup"><strong>Sign-up</strong></a></p>
+                <p className="text-center"><a href="/reset"><strong>Forgot your password?</strong></a></p>
                 <a href = "/"><button className="btn btn-primary">Back Home</button></a>
             </div>
         </div>

@@ -9,6 +9,7 @@ import Signup from './components/signup';
 import Login from './components/login';
 import SearchResults from './components/search_results';
 import Business from './components/business';
+import Reset from './components/Reset';
 // components for routing
 import { browserHistory, Router, Route } from 'react-router';
 
@@ -22,6 +23,7 @@ render(
     <Route path="/login" component={Login} />
     <Route path="/search" component={SearchResults} />
     <Route path="/businesses" component={Business} />
+    <Route path="/reset" component={Reset} />
   </Router>,
 
 document.getElementById('root'));
