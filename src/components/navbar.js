@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     return (
         <div className="row">
-            <nav className="navbar navbar-inverse">
+            <nav className="navbar navbar-inverse main-navbar">
                 <div className="container-fluid">
                 <div className="navbar-header">
                     <a className="navbar-brand title" href="/">WeConnect</a>
@@ -22,7 +22,7 @@ class Navbar extends Component {
                     <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
                 </div>
-        </nav>
+            </nav>
       </div>
     );
   }
