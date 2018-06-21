@@ -12,6 +12,7 @@ class BusinessList extends Component {
         <h1 className="title">{item.name}</h1>
         <h3>{item.contact}</h3>
         <h3>{item.location}</h3>
+        <button className="btn btn-info">Read more ...</button>
         </div>
   }
   
