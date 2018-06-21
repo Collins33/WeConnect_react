@@ -18,7 +18,7 @@ class Login extends Component {
             email: email,
             password: password,
         }).then(response =>{
-            console.log(response)
+            console.log(response.data.access_token)
             // sweet alert pop up
             console.log("Log in successful")
             browserHistory.push('/businesses')
