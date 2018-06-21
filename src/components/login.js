@@ -3,25 +3,25 @@ import '../App.css';
 import axios from 'axios';
 
 class Login extends Component {
-    // state = {
-    //     login:[]
-    // }
+    state = {
+        login:[]
+    }
    
-    // login = async (e) =>{
-    //     e.preventDefault()
-    //     const email = e.target.elements.email.value;
-    //     const password = e.target.elements.password.value;
+    login = async (e) =>{
+        e.preventDefault()
+        const email = e.target.elements.email.value;
+        const password = e.target.elements.password.value;
         
-    //     axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/login', {
-    //         email: email,
-    //         password: password,
-    //     }).then(response =>{
-    //         const login_response = 
-    //         // console.log("successfully logged in")
-    //         // alert("You have successfully logged in a user.")
-    //     })
-    //     .catch(error => console.log(error));
-    // }
+        axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/login', {
+            email: email,
+            password: password,
+        }).then(response =>{
+            console.log(response)
+            // sweet alert pop up
+            console.log("Log in successful")
+        })
+        .catch(error => console.log(error));
+    }
 
   render() {
     return (
