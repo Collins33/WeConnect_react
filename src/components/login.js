@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import { browserHistory} from 'react-router';
+import swal from 'sweetalert';
 
 class Login extends Component {
     state = {
@@ -19,6 +21,13 @@ class Login extends Component {
             console.log(response)
             // sweet alert pop up
             console.log("Log in successful")
+            browserHistory.push('/businesses')
+            swal({
+                title: "Success!",
+                text: "You successfully logged in",
+                icon: "success",
+                button: "Explore",
+              });
         })
         .catch(error => console.log(error));
     }

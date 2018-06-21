@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { browserHistory} from 'react-router';
 
 class Signup extends Component {
     state = {
@@ -20,6 +21,7 @@ class Signup extends Component {
             confirm_password: confirm_password
         }).then(response =>{
             console.log("registered user successfully")
+            browserHistory.push('/login')
             // sweet alert pop up
             swal({
                 title: "Success!",
