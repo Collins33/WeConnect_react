@@ -56,21 +56,23 @@ class SearchResults extends Component {
     return (
         <div className = "row">
         <div>
-        <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">WeConnect</a>
+        <nav className="navbar navbar-inverse">
+                <div className="container-fluid">
+                <div className="navbar-header">
+                    <a className="navbar-brand title" href="/">WeConnect</a>
                 </div>
-                <ul class="nav navbar-nav">
+                <ul className="nav navbar-nav">
+                </ul>
+                <ul className="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/">Businesses</a></li>
+                    <li><a href="/businesses">Businesses</a></li>
                     <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/signup">Sign up</a></li>
-                    <li><a href="/login">Login</a></li>
                     <li><a href="/search">Search for business</a></li>
+                    <li><a href="signup"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
                 </div>
-            </nav>
+        </nav>
         </div>
         <h1 className="text-center">SEARCH FOR A BUSINESS</h1>
         <div className="col-xs-12 col-md-12 col-lg-12">
