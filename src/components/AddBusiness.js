@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 class AddBusiness extends Component {
     state = {
@@ -34,9 +35,15 @@ class AddBusiness extends Component {
         axios.post('https://we-connect-muru.herokuapp.com/api/v2/businesses',
         payload,config).then(response =>{
         console.log(response)
+        swal({
+            title: "Success!",
+            text: "You successfully added the business",
+            icon: "success",
+            button: "Explore",
+          });
         }).catch(error => console.log(error));
     }
-    
+
   render() {
     return (
         <div className="row signuprow">
