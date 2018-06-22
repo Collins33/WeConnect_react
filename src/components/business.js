@@ -31,7 +31,6 @@ class Business extends Component {
       //store the new state in the component's state
       this.setState(newState)
       // this sets the newState object as our new state
-     
     })
     .catch(error => console.log(error));
   }
