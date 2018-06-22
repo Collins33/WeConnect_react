@@ -31,7 +31,13 @@ class Business extends Component {
       //store the new state in the component's state
       this.setState(newState)
       // this sets the newState object as our new state
-     
+      
+      if (localStorage.getItem('auth_token')){
+        console.log(localStorage.getItem('auth_token'))
+      }
+      else{
+        console.log("No token")
+      }
     })
     .catch(error => console.log(error));
   }
