@@ -7,6 +7,7 @@ class AddBusiness extends Component {
     }
   render() {
     return (
+        <div className="row signuprow">
         <div className="row form-column">
         <div className="col-sm-12 col-md-12 col-lg-12 well">
             <h1 className="text-center title">WeConnect</h1>
@@ -32,7 +33,7 @@ class AddBusiness extends Component {
             <a href = "/"><button className="btn btn-primary">Back Home</button></a>
         </div>
     </div>
-
+    </div>
     );
   }
 }
