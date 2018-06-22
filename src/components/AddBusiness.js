@@ -28,6 +28,17 @@ class AddBusiness extends Component {
                 <div className="form-group">
                     <input className="form-control" placeholder="enter business location" id="location-field" type="name" name="location"/>
                 </div>
+                <div className="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+                </div>
                 <button className="btn btn-info form-button" type="submit">ADD BUSINESS</button>
             </form>
             <a href = "/"><button className="btn btn-primary">Back Home</button></a>
