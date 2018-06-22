@@ -18,7 +18,8 @@ class Login extends Component {
             email: email,
             password: password,
         }).then(response =>{
-            console.log(response.data.access_token)
+            const auth_token = response.data.access_token
+            console.log(auth_token)
             // sweet alert pop up
             console.log("Log in successful")
             browserHistory.push('/businesses')

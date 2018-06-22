@@ -9,13 +9,13 @@ class Body extends Component {
         <h2 className="text-center">
         HELP THE COMMUNITY
         </h2>
-        <div className="col-xs-4 col-md-4 col-lg-4">
+        <div className="col-xs-4 col-md-4 col-lg-4 first-body">
           <h3 className="text-center">Interact with a business</h3>
         </div>
-        <div className="col-xs-4 col-md-4 col-lg-4">
+        <div className="col-xs-4 col-md-4 col-lg-4 second-body">
           <h3 className="text-center">Write a review</h3>
         </div>
-        <div className="col-xs-4 col-md-4 col-lg-4">
+        <div className="col-xs-4 col-md-4 col-lg-4 third-body">
           <h3 className="text-center">Post a review</h3>
         </div>
         </div>

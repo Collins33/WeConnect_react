@@ -24,6 +24,7 @@ class BusinessList extends Component {
       const listItems=businessEntries.map(this.createBusiness)
     return (
       <div className="row business-row">
+      
       <h1 className="text-center">ALL BUSINESSES</h1>
       <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
         {listItems}
