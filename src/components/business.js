@@ -11,6 +11,7 @@ class Business extends Component {
 
   // add the componentDidMount lifecylce method
   componentDidMount(){
+    const auth_token = localStorage.getItem("auth_token")
     axios.get("https://we-connect-muru.herokuapp.com/api/v2/businesses")
     .then(response =>{
       // this one is executed immediately the data returns from the backend
