@@ -12,12 +12,16 @@ class AddBusiness extends Component {
         // method to add business
         // get token from localstorage
         const auth_token = localStorage.getItem("auth_token")
-        const category = "technology"
+        //get data from the drop down
+        var dropdown = document.getElementById("sel1");
+        var strUser = dropdown.options[dropdown.selectedIndex].text;
+        const category = strUser
         // get data from the form
         const name = e.target.elements.businessName.value;
         const description = e.target.elements.description.value;
         const contact = e.target.elements.contact.value;
         const location = e.target.elements.location.value;
+        
         // create the payloads
         const config = {
             // config with the token
@@ -31,6 +35,7 @@ class AddBusiness extends Component {
             location: location,
             category: category
         }
+
         // make post request using axios and pass the payloads
         axios.post('https://we-connect-muru.herokuapp.com/api/v2/businesses',
         payload,config).then(response =>{
@@ -67,19 +72,19 @@ class AddBusiness extends Component {
                 <div className="form-group">
                     <input className="form-control" placeholder="enter business location" id="location-field" type="name" name="location"/>
                 </div>
-                {/* <div className="form-group">
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select category
-                    <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">fast-food</a></li>
-                        <li><a href="#">technology</a></li>
-                        <li><a href="#">hardware</a></li>
-                        <li><a href="#">hospitality</a></li>
-                        <li><a href="#">education</a></li>
-                    </ul>
+
+                <div class="form-group">
+                <label for="sel1">Select business category:</label>
+                <select class="form-control" id="sel1">
+                    <option>technology</option>
+                    <option>agriculture</option>
+                    <option>retail</option>
+                    <option>fast-food</option>
+                    <option>software</option>
+                    <option>hardware</option>
+                </select>
                 </div>
-                </div> */}
+
                 <button className="btn btn-info form-button" type="submit">ADD BUSINESS</button>
             </form>
             <a href = "/"><button className="btn btn-primary">Back Home</button></a>
