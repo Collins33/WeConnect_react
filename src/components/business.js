@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from "axios";
-import BusinessList from './business_list'
+import BusinessList from './BusinessList'
 
 class Business extends Component {
   // set the default state object
