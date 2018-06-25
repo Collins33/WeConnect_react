@@ -12,13 +12,11 @@ class SearchResults extends Component {
 
   createBusiness = (item) =>{
     return <div className="col-xs-12 col-md-12 col-lg-12 panel">
-    
     <h1>{item.name}</h1>
     <h4>{item.location}</h4>
     <h4>{item.description}</h4>
     <h4>{item.category}</h4>
     <h4>{item.contact}</h4>
-    
     </div>
   }
 

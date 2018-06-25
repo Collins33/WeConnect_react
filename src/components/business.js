@@ -24,7 +24,6 @@ class Business extends Component {
           location : business.location
         }
       })
-
       //create a new state without mutating the original state
       // newState is now equal to the new object which is the newBusiness object
       const newState = Object.assign(this.state, {businesses: newBusiness}) // new state object

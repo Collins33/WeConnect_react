@@ -16,8 +16,7 @@ class Footer extends Component {
                     <p className="text-center">© 2018 WeConnect All rights reserved.</p>
                 </div>
                 <div className="col-sm-4 col-md-4 col-lg-4">
-                <h4>Email us</h4>
-
+                    <h4>Email us</h4>
                 </div>
         </div>
 

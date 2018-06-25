@@ -14,14 +14,13 @@ class AddBusiness extends Component {
         const auth_token = localStorage.getItem("auth_token")
         //get data from the drop down
         var dropdown = document.getElementById("sel1");
-        var strUser = dropdown.options[dropdown.selectedIndex].text;
-        const category = strUser
+        var category_select = dropdown.options[dropdown.selectedIndex].text;
+        const category = category_select
         // get data from the form
         const name = e.target.elements.businessName.value;
         const description = e.target.elements.description.value;
         const contact = e.target.elements.contact.value;
         const location = e.target.elements.location.value;
-        
         // create the payloads
         const config = {
             // config with the token
@@ -35,7 +34,6 @@ class AddBusiness extends Component {
             location: location,
             category: category
         }
-
         // make post request using axios and pass the payloads
         axios.post('https://we-connect-muru.herokuapp.com/api/v2/businesses',
         payload,config).then(response =>{
@@ -47,6 +45,7 @@ class AddBusiness extends Component {
             button: "Explore",
           });
         }).catch(error => {
+            // alerts if there is an error
             if (error.response.status === 409){
                 swal("Error!!", "Business name already exists. Use a different name", "error");
             }
