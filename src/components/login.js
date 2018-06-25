@@ -31,7 +31,11 @@ class Login extends Component {
                 button: "Explore",
               });
         })
-        .catch(error => console.log(error));
+        .catch(error =>{
+            if (error.response.status === 401){
+                swal("Error!!", "Invalid email or password", "error");
+            }
+        });
     }
 
   render() {

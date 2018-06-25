@@ -46,7 +46,17 @@ class AddBusiness extends Component {
             icon: "success",
             button: "Explore",
           });
-        }).catch(error => console.log(error));
+        }).catch(error => {
+            if (error.response.status === 409){
+                swal("Error!!", "Business name already exists. Use a different name", "error");
+            }
+            else if(error.response.status === 400){
+                swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
+            }
+            else if(error.response.status === 403){
+                swal("Error!!", "You must be logged in to add a business,", "error");
+            }
+        });
     }
 
   render() {

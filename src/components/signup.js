@@ -30,7 +30,15 @@ class Signup extends Component {
                 button: "Log in",
               });
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+            if (error.response.status === 409){
+                swal("Error!!", "That email already exists. Use a different email", "error");
+            }
+            else if(error.response.status === 400){
+                swal("Error!!", "Credentials are invalid. Ensure all fields are present, email is the correct format and password has more than 6 characters", "error");
+            }
+            
+        });
     }
 
   render() {

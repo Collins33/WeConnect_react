@@ -8,7 +8,6 @@ class Business extends Component {
   state = {
     businesses: []
   }
-
   // add the componentDidMount lifecylce method
   componentDidMount(){
     const auth_token = localStorage.getItem("auth_token")
