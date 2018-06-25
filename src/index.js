@@ -1,21 +1,21 @@
 import React from 'react';
+import { browserHistory, Router, Route } from 'react-router';
 import { render } from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
-import About from './components/about';
-import Dashboard from './components/dashboard';
-import Signup from './components/signup';
-import Login from './components/login';
-import SearchResults from './components/search_results';
-import Business from './components/business';
+import About from './components/About';
+import Dashboard from './components/Dashboard';
+import Signup from './components/Signup';
+import Login from './components/Login';
+import SearchResults from './components/searchResults';
+import Business from './components/Business';
 import Reset from './components/Reset';
 import AddBusiness from './components/AddBusiness'
 // components for routing
-import { browserHistory, Router, Route } from 'react-router';
+
 
 render(
-
   <Router history={browserHistory}>
     <Route path="/" component={App} />
     <Route path="/about" component={About} />

@@ -9,7 +9,7 @@ class Login extends Component {
         login:[]
     }
    
-    login = async (e) =>{
+    login = (e) =>{
         e.preventDefault()
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
