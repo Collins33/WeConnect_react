@@ -53,6 +53,9 @@ class AddBusiness extends Component {
             else if(error.response.status === 400){
                 swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
             }
+            else if(error.response.status === 403){
+                swal("Error!!", "You must be logged in to add a business,", "error");
+            }
         });
     }
 
