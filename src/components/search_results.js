@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 class SearchResults extends Component {
   state = {
@@ -44,7 +45,11 @@ class SearchResults extends Component {
       this.setState(newState)
       
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      if (error.response.status === 404){
+        swal("Error!!", "Business does not exist", "error");
+      }
+    });
     
   }
 
