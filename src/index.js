@@ -5,7 +5,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 import About from './components/About';
-import Dashboard from './components/dashboard';
+import Dashboard from './components/Dashboard';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import SearchResults from './components/searchResults';
