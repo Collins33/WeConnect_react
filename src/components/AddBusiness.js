@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { browserHistory} from 'react-router';
 
 class AddBusiness extends Component {
     state = {
@@ -54,9 +55,12 @@ class AddBusiness extends Component {
             }
             else if(error.response.status === 403){
                 swal("Error!!", "You must be logged in to add a business,", "error");
+                browserHistory.push('/login')
             }
             else if(error.response.status === 500){
                 swal("Error!!", "You must be logged in to add a business,", "error");
+                browserHistory.push('/login')
+                
             }
         });
     }
