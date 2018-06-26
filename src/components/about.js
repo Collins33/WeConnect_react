@@ -4,6 +4,9 @@ import '../App.css';
 import { render } from 'react-dom';
 
 class About extends Component {
+  state = {
+    
+  }
   render() {
     return (
         <div className = "row">
