@@ -32,9 +32,11 @@ class Signup extends Component {
         })
         .catch(error => {
             if (error.response.status === 409){
-                swal("Error!!", "That email already exists. Use a different email", "error");
+                const message = error.response.data.message
+                swal("Error!!", message, "error");
             }
             else if(error.response.status === 400){
+
                 swal("Error!!", "Credentials are invalid. Ensure all fields are present, email is the correct format and password has more than 6 characters", "error");
             }
             
