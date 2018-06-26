@@ -55,6 +55,9 @@ class AddBusiness extends Component {
             else if(error.response.status === 403){
                 swal("Error!!", "You must be logged in to add a business,", "error");
             }
+            else if(error.response.status === 500){
+                swal("Error!!", "You must be logged in to add a business,", "error");
+            }
         });
     }
 
