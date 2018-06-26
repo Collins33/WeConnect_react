@@ -61,7 +61,7 @@ class Dashboard extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-4 col-md-4 col-lg-4 well myBusinessRow">
+    return <div className="col-xs-12 col-md-12 col-lg-12 well myBusinessRow">
       <h1 className="title text-center">{item.name}</h1>
       <h1 className="text-center well">{item.category}</h1>
       <p className="text-center">{item.description}</p>
