@@ -39,11 +39,10 @@ class Dashboard extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-12 col-md-12 col-lg-12 well business">
+    return <div className="col-xs-4 col-md-4 col-lg-4 well business">
       <h1 className="title">{item.name}</h1>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
-      <button className="btn btn-info">Read more ...</button>
       </div>
 }
 
