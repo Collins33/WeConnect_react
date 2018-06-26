@@ -68,7 +68,7 @@ class Dashboard extends Component {
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
       <div className="col-xs-6 col-md-6 col-lg-6">
-      <button className="btn btn-primary manipulatebusinessbutton">Update business</button>
+      <button className="btn btn-primary manipulatebusinessbutton" data-toggle="modal" data-target="#firstmodal">Update business</button>
       </div>
       <div className="col-xs-6 col-md-6 col-lg-6">
       <button className="btn btn-danger manipulatebusinessbutton">Delete business</button>
@@ -100,8 +100,39 @@ class Dashboard extends Component {
             {listItems}
            </div>
           </div>
+
+          {/* modal */}
+
+          <div id="firstmodal" className="modal fade" role="dialog">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <button type="button" className="close" data-dismiss="modal"></button>
+                  <h4 className="modal-title">PLAYER FORM</h4>
+                </div>
+                <div className="modal-body">
+                  <h2>FILL TO REGISTER</h2>
+                  <form id="playerinfo">
+                    <div className="form-group">
+                      <label>ENTER YOUR NAME</label>
+                      <input type="text" className="form-control" id="name" />
+                    </div>
+                    <div className="form-group">
+                      <label>ENTER YOUR year of birth</label>
+                      <input type="number" className="form-control" id="age" />
+                    </div>
+                    <button className="btn" type="submit">GIVE INFO</button>
+                  </form>
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+    </div>
          
         </div>
+        
 
     );
   }
