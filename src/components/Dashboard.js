@@ -108,20 +108,28 @@ class Dashboard extends Component {
               <div className="modal-content">
                 <div className="modal-header">
                   <button type="button" className="close" data-dismiss="modal"></button>
-                  <h4 className="modal-title">PLAYER FORM</h4>
+                  <h4 className="modal-title">UPDATE BUSINESS</h4>
                 </div>
                 <div className="modal-body">
-                  <h2>FILL TO REGISTER</h2>
+                  <h2>FILL TO UPDATE BUSINESS</h2>
                   <form id="playerinfo">
                     <div className="form-group">
-                      <label>ENTER YOUR NAME</label>
+                      <label>ENTER NEW BUSINESS NAME</label>
                       <input type="text" className="form-control" id="name" />
                     </div>
                     <div className="form-group">
-                      <label>ENTER YOUR year of birth</label>
-                      <input type="number" className="form-control" id="age" />
+                      <label>ENTER NEW DESCRIPTION</label>
+                      <input type="number" className="form-control" id="description" />
                     </div>
-                    <button className="btn" type="submit">GIVE INFO</button>
+                    <div className="form-group">
+                      <label>ENTER NEW BUSINESS LOCATION</label>
+                      <input type="number" className="form-control" id="location" />
+                    </div>
+                    <div className="form-group">
+                      <label>ENTER NEW BUSINESS CONTACT</label>
+                      <input type="number" className="form-control" id="contact" />
+                    </div>
+                    <button className="btn" type="submit">SUBMIT</button>
                   </form>
                 </div>
                 <div className="modal-footer">
