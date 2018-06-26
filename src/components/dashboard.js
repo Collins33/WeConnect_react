@@ -18,7 +18,9 @@ class Dashboard extends Component {
             </div>
           </div>
           <div className="col-xs-9 col-md-9 col-lg-9">
-
+           <div className="row">
+           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
+           </div>
           </div>
          
         </div>
