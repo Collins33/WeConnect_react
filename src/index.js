@@ -27,8 +27,7 @@ render(
     <Route path="/reset" component={Reset} />
     <Route path="/addBusiness" component={AddBusiness} />
   </Router>,
-
-document.getElementById('root')
+document.getElementById('root'),
 );
 
 // service workers give the app offline capabilities
