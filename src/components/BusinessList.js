@@ -22,16 +22,16 @@ class BusinessList extends Component {
       const businessEntries = this.props.businesses;
       //map out the array into col-xs-3
       const listItems=businessEntries.map(this.createBusiness)
-    return (
-      <div className="row business-row">
-      <a href="/addBusiness"><button className="btn btn-success">ADD BUSINESS</button></a>
-      <h1 className="text-center">ALL BUSINESSES</h1>
-      <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-        {listItems}
-      </Animated>
-      </div>        
+      return (
+        <div className="row business-row">
+        <a href="/addBusiness"><button className="btn btn-success">+ ADD BUSINESS</button></a>
+        <h1 className="text-center">ALL BUSINESSES</h1>
+        <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
+          {listItems}
+        </Animated>
+        </div>        
 
-    );
+      );
   }
 }
 
