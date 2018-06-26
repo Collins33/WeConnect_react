@@ -36,8 +36,9 @@ class Signup extends Component {
                 swal("Error!!", message, "error");
             }
             else if(error.response.status === 400){
-
-                swal("Error!!", "Credentials are invalid. Ensure all fields are present, email is the correct format and password has more than 6 characters", "error");
+                const message = error.response.data[0].message
+                console.log(message)
+                swal("Error!!", message, "error");
             }
             
         });
