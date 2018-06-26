@@ -67,6 +67,12 @@ class Dashboard extends Component {
       <p className="text-center">{item.description}</p>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
+      <div className="col-xs-6 col-md-6 col-lg-6">
+      <button className="btn btn-primary manipulatebusinessbutton">Update business</button>
+      </div>
+      <div className="col-xs-6 col-md-6 col-lg-6">
+      <button className="btn btn-danger manipulatebusinessbutton">Delete business</button>
+      </div>
       </div>
 }
 
