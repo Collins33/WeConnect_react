@@ -25,7 +25,9 @@ class Dashboard extends Component {
           // we are taking business name and business contact from the response
           name: business.name,
           contact: business.contact,
-          location : business.location
+          location : business.location,
+          category: business.category,
+          description: business.description
         }
       })
       //create a new state without mutating the original state
@@ -54,8 +56,10 @@ class Dashboard extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-4 col-md-4 col-lg-4 well business">
-      <h1 className="title">{item.name}</h1>
+    return <div className="col-xs-4 col-md-4 col-lg-4 well myBusinessRow">
+      <h1 className="title text-center">{item.name}</h1>
+      <h1 className="text-center well">{item.category}</h1>
+      <p className="text-center">{item.description}</p>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
       </div>
