@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 class Dashboard extends Component {
   state = {
@@ -34,7 +35,21 @@ class Dashboard extends Component {
       this.setState(newState)
       // this sets the newState object as our new state
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      // alerts if there is an error
+      if (error.response.status === 409){
+        swal("Error!!", "Business name already exists. Use a different name", "error");
+      }
+      else if(error.response.status === 400){
+          swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
+      }
+      else if(error.response.status === 403){
+          swal("Error!!", "You must be logged in to use the dashboard,", "error");
+      }
+      else if(error.response.status === 500){
+          swal("Error!!", "You must be logged in to use the dashboard,", "error");
+      }
+    });
   }
   createBusiness = (item) =>{
     //map each item into a column
@@ -47,9 +62,6 @@ class Dashboard extends Component {
 }
 
 
-
-
-
   render() {
     const businesses = this.state.businesses;
     const listItems=businesses.map(this.createBusiness)
@@ -58,10 +70,10 @@ class Dashboard extends Component {
         <div className="row dashboardrow">
           <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
             <div className="row">
-             <h1 className="text-center">MyProfile</h1>
+             <h1 className="text-center">MY PROFILE</h1>
             </div>
             <div className="row" id="home-row">
-              <a href="/"><h1 className="text-center">Home</h1></a>
+              <a href="/"><h1 className="text-center">HOME</h1></a>
             </div>
           </div>
           <div className="col-xs-9 col-md-9 col-lg-9">
@@ -69,7 +81,7 @@ class Dashboard extends Component {
            <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
            </div>
            <div className="row">
-            <h1 id="myBusiness">My businesses</h1>
+            <h1 id="myBusiness">MY BUSINESSES</h1>
             {listItems}
            </div>
           </div>
