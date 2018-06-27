@@ -9,9 +9,7 @@ class BusinessList extends Component {
       //map each item into a column
       //return each column
       return <div className="col-xs-12 col-md-12 col-lg-12 well business">
-        <h1 className="title">{item.name}</h1>
-        <h3>{item.contact}</h3>
-        <h3>{item.location}</h3>
+        <h1 className="title well">{item.name}</h1>
         <button className="btn btn-info">Read more ...</button>
         </div>
   }
