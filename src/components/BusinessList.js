@@ -10,8 +10,14 @@ class BusinessList extends Component {
       //return each column
       return <div className="col-xs-12 col-md-12 col-lg-12 well business">
         <h1 className="title well">{item.name}</h1>
-        <button className="btn btn-info">Read more ...</button>
+        <button className="btn btn-info" onClick={(e) => this.showBusinessDetails(item.id, e)}>Read more ...</button>
         </div>
+  }
+
+  // method to redirect to the component displaying details about the business
+  showBusinessDetails = (business_id) =>{
+    console.log(business_id)
+
   }
   
 
