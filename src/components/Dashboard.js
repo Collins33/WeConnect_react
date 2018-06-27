@@ -71,6 +71,7 @@ class Dashboard extends Component {
     axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
     .then(response =>{
       console.log(response)
+      this.componentDidMount()
     })
     .catch(error =>{
       console.log(error)
