@@ -6,6 +6,10 @@ class BusinessDetails extends Component {
   state = {
 
   }
+  componentDidMount(){
+    const id = this.props.params.id
+    console.log(id)
+  }
   render() {
     return (
       <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
