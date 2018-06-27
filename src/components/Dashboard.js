@@ -28,7 +28,8 @@ class Dashboard extends Component {
           contact: business.contact,
           location : business.location,
           category: business.category,
-          description: business.description
+          description: business.description,
+          id: business.id
         }
       })
       //create a new state without mutating the original state
@@ -58,6 +59,24 @@ class Dashboard extends Component {
       }
     });
   }
+
+  deleteBusiness = (business_id)=>{
+    
+    console.log(business_id)
+    // const auth_token = localStorage.getItem("auth_token")
+    // const config = {
+    //   // config with the token
+    //   headers: {'Authorization': "bearer " + auth_token}
+    // }
+    // axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
+    // .then(response =>{
+    //   console.log(response)
+    // })
+    // .catch(error =>{
+    //   console.log(error)
+    // })
+
+  }
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
@@ -71,7 +90,7 @@ class Dashboard extends Component {
       <button className="btn btn-primary manipulatebusinessbutton" data-toggle="modal" data-target="#firstmodal">Update business</button>
       </div>
       <div className="col-xs-6 col-md-6 col-lg-6">
-      <button className="btn btn-danger manipulatebusinessbutton">Delete business</button>
+      <button className="btn btn-danger manipulatebusinessbutton" onClick={(e) => this.deleteBusiness(item.id, e)}>Delete business</button>
       </div>
       </div>
 }
