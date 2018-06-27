@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import {Animated} from 'react-animated-css';
+import { browserHistory} from 'react-router';
 
 class BusinessList extends Component {
   // method to map out the list
@@ -17,7 +18,7 @@ class BusinessList extends Component {
   // method to redirect to the component displaying details about the business
   showBusinessDetails = (business_id) =>{
     console.log(business_id)
-
+    
   }
   
 
