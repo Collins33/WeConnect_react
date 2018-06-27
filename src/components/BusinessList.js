@@ -18,7 +18,7 @@ class BusinessList extends Component {
   // method to redirect to the component displaying details about the business
   showBusinessDetails = (business_id) =>{
     console.log(business_id)
-    
+    browserHistory.push(`/business/${business_id}`)
   }
   
 
