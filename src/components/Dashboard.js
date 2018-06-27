@@ -63,18 +63,18 @@ class Dashboard extends Component {
   deleteBusiness = (business_id)=>{
     
     console.log(business_id)
-    // const auth_token = localStorage.getItem("auth_token")
-    // const config = {
-    //   // config with the token
-    //   headers: {'Authorization': "bearer " + auth_token}
-    // }
-    // axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
-    // .then(response =>{
-    //   console.log(response)
-    // })
-    // .catch(error =>{
-    //   console.log(error)
-    // })
+    const auth_token = localStorage.getItem("auth_token")
+    const config = {
+      // config with the token
+      headers: {'Authorization': "bearer " + auth_token}
+    }
+    axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
+    .then(response =>{
+      console.log(response)
+    })
+    .catch(error =>{
+      console.log(error)
+    })
 
   }
   createBusiness = (item) =>{
