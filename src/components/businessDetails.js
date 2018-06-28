@@ -4,12 +4,14 @@ import '../App.css';
 import axios from 'axios';
 class BusinessDetails extends Component {
   state = {
-    businesses: []
+    businesses: [],
+    reviews: []
   }
   componentDidMount(){
     const id = this.props.params.id
     console.log(id)
     this.getBusinessDetails(id)
+    this.getBusinessReviews(id)
   }
 
   // function to make call to get business details
@@ -36,7 +38,34 @@ class BusinessDetails extends Component {
       //store the new state in the component's state
       this.setState(newState)
       // this sets the newState object as our new state
-      console.log(this.state)
+      
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
+
+  // function to get all business reviews
+  getBusinessReviews = (id) =>{
+    axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}/reviews`)
+    .then(response =>{
+      // this one is executed immediately the data returns from the backend
+      //create array of businesses with the information you need
+      const newReview = response.data.map(review => {
+        // use map to get only the relevant data from the response 
+        return{
+          // we are taking business name and business contact from the response
+          opinion: review.opinion,
+          rating: review.rating,
+        }
+      })
+      //create a new state without mutating the original state
+      // newState is now equal to the new object which is the newBusiness object
+      const newState = Object.assign(this.state, {reviews: newReview}) // new state object
+      //store the new state in the component's state
+      this.setState(newState)
+      // this sets the newState object as our new state
+      console.log(this.state.reviews)
     })
     .catch(error =>{
       console.log(error)
@@ -56,9 +85,22 @@ class BusinessDetails extends Component {
       </div>
 }
 
+// funtion to map single review to the ui
+createReview = (item) =>{
+  return <div className="col-xs-12 col-md-12 col-lg-12">
+      <h1>{item.opinion}</h1>
+      <h1 className="well">Rating: {item.rating}</h1>
+      </div>
+}
+
   render() {
+    // get business from state and map them
     const businesses = this.state.businesses;
     const listItems=businesses.map(this.createBusiness)
+    
+    // get reviews from state and map them
+    const reviews = this.state.reviews;
+    const reviewList=reviews.map(this.createReview)
 
     return (
         <div className="row">
@@ -86,6 +128,7 @@ class BusinessDetails extends Component {
         <div className="row">
         <div className="col-xs-6 col-md-6 col-lg-6">
         <h2 className="text-center">ALL REVIEWS</h2>
+        {reviewList}
         </div>
         <div className="col-xs-6 col-md-6 col-lg-6 well">
         <h2 className="text-center">ADD REVIEW</h2>
