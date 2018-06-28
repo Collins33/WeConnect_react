@@ -8,8 +8,8 @@ class BusinessDetails extends Component {
     reviews: []
   }
   componentDidMount(){
+    // method is called when component is mounted
     const id = this.props.params.id
-    console.log(id)
     this.getBusinessDetails(id)
     this.getBusinessReviews(id)
   }
@@ -65,11 +65,18 @@ class BusinessDetails extends Component {
       //store the new state in the component's state
       this.setState(newState)
       // this sets the newState object as our new state
-      console.log(this.state.reviews)
     })
     .catch(error =>{
       console.log(error)
     })
+  }
+
+  // function to add review for a particular business
+  addBusinessReviews =(e)=>{
+    e.preventDefault()
+    // first get the business id
+    const id = this.props.params.id
+    console.log(id)
   }
 
   // function to map the single business details
@@ -124,7 +131,6 @@ createReview = (item) =>{
         {/* BUSINESS DETAILS COLUMN */}
           {listItems}
         {/* REVIEWS ROW */}
-
         <div className="row">
         <div className="col-xs-6 col-md-6 col-lg-6">
         <h2 className="text-center">ALL REVIEWS</h2>
@@ -132,7 +138,7 @@ createReview = (item) =>{
         </div>
         <div className="col-xs-6 col-md-6 col-lg-6 well">
         <h2 className="text-center">ADD REVIEW</h2>
-        <form className="text-center">
+        <form className="text-center" onSubmit = {this.addBusinessReviews}>
                 <div className="form-group">
                     <input className="form-control" placeholder="enter business review" id="name-field" type="name" name="businessOpinion" />
                 </div>                
