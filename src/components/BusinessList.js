@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
 import {Animated} from 'react-animated-css';
+import { browserHistory} from 'react-router';
 
 class BusinessList extends Component {
   // method to map out the list
@@ -9,11 +10,16 @@ class BusinessList extends Component {
       //map each item into a column
       //return each column
       return <div className="col-xs-12 col-md-12 col-lg-12 well business">
-        <h1 className="title">{item.name}</h1>
-        <h3>{item.contact}</h3>
-        <h3>{item.location}</h3>
-        <button className="btn btn-info">Read more ...</button>
+        <h1 className="title well">{item.name}</h1>
+        <button className="btn btn-info" onClick={(e) => this.showBusinessDetails(item.id, e)}>Read more ...</button>
         </div>
+  }
+
+  // method to redirect to the component displaying details about the business
+  showBusinessDetails = (business_id) =>{
+    console.log(business_id)
+    const business_detail_route = `/business/${business_id}`
+    browserHistory.push(business_detail_route)   
   }
   
 

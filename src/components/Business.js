@@ -21,7 +21,8 @@ class Business extends Component {
           // we are taking business name and business contact from the response
           name: business.name,
           contact: business.contact,
-          location : business.location
+          location : business.location,
+          id : business.id
         }
       })
       //create a new state without mutating the original state

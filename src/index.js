@@ -11,7 +11,8 @@ import Login from './components/Login';
 import SearchResults from './components/searchResults';
 import Business from './components/Business';
 import Reset from './components/Reset';
-import AddBusiness from './components/AddBusiness'
+import AddBusiness from './components/AddBusiness';
+import BusinessDetails from './components/businessDetails';
 // components for routing
 
 
@@ -26,6 +27,7 @@ render(
     <Route path="/businesses" component={Business} />
     <Route path="/reset" component={Reset} />
     <Route path="/addBusiness" component={AddBusiness} />
+    <Route path="/business/:id" component={BusinessDetails} />
   </Router>,
 document.getElementById('root'),
 );
