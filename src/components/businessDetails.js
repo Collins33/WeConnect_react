@@ -97,6 +97,7 @@ class BusinessDetails extends Component {
                 icon: "success",
                 button: "view",
               });
+              this.componentDidMount()
         })
         .catch(error => {
             if (error.response.status === 409){
