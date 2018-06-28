@@ -13,7 +13,6 @@ class BusinessDetails extends Component {
   }
 
   // function to make call to get business details
-
   getBusinessDetails = (id)=>{
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}`)
     .then(response =>{
@@ -39,18 +38,51 @@ class BusinessDetails extends Component {
       // this sets the newState object as our new state
       console.log(this.state)
     })
+    .catch(error =>{
+      console.log(error)
+    })
   }
-  render() {
-    return (
-      <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
-        <div className="row intro">
-          <h1 className="text-center intro-text title">WeConnect</h1>
-          <h2 className="text-center intro-text">
-            A new way to connect with businesses around you
-          </h2>
-        </div>
-      </Animated>
 
+  // function to map the single business details
+  createBusiness = (item) =>{
+    //map each item into a column
+    //return each column
+    return <div className="col-xs-8 col-md-8 col-lg-8 well">
+      <h1 className="title text-center">{item.name}</h1>
+      <h1 className="text-center well">{item.category}</h1>
+      <p className="text-center">{item.description}</p>
+      <h3>{item.contact}</h3>
+      <h3>{item.location}</h3>
+      </div>
+}
+
+  render() {
+    const businesses = this.state.businesses;
+    const listItems=businesses.map(this.createBusiness)
+
+    return (
+
+        <div className="row">
+        <nav className="navbar navbar-inverse">
+                <div className="container-fluid">
+                <div className="navbar-header">
+                    <a className="navbar-brand title" href="/">WeConnect</a>
+                </div>
+                <ul className="nav navbar-nav">
+                </ul>
+                <ul className="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/businesses">Businesses</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/search">Search for business</a></li>
+                    <li><a href="signup"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+                </div>
+        </nav>
+        
+          {listItems}
+        </div>
     );
   }
 }
