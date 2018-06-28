@@ -20,8 +20,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Intro />
-        <Body />
-        <Footer />
+        
       </div>
     );
   }
