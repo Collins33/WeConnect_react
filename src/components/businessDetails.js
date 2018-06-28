@@ -76,7 +76,41 @@ class BusinessDetails extends Component {
     e.preventDefault()
     // first get the business id
     const id = this.props.params.id
-    console.log(id)
+    const opinion = e.target.elements.businessOpinion.value;
+    // get data from the drop down 
+    var dropdown = document.getElementById("sel1");
+    var rating_select = dropdown.options[dropdown.selectedIndex].text;
+    const rating = rating_select
+
+    console.log(opinion)
+    console.log(rating)
+        // axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/registration', {
+        //     email: email,
+        //     password: password,
+        //     confirm_password: confirm_password
+        // }).then(response =>{
+        //     console.log("registered user successfully")
+        //     browserHistory.push('/login')
+        //     // sweet alert pop up
+        //     swal({
+        //         title: "Success!",
+        //         text: "You successfully registered",
+        //         icon: "success",
+        //         button: "Log in",
+        //       });
+        // })
+        // .catch(error => {
+        //     if (error.response.status === 409){
+        //         const message = error.response.data.message
+        //         swal("Error!!", message, "error");
+        //     }
+        //     else if(error.response.status === 400){
+        //         const message = error.response.data[0].message
+        //         console.log(message)
+        //         swal("Error!!", message, "error");
+        //     }
+            
+        // });
   }
 
   // function to map the single business details
