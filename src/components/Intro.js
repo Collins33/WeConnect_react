@@ -14,6 +14,7 @@ class Intro extends Component {
           <h2 className="text-center intro-text">
             A new way to connect with businesses around you
           </h2>
+          <a href="/businesses"><button  class="btn btn-dark intro-button">EXPLORE</button></a>
         </div>
       </Animated>
 
