@@ -161,7 +161,9 @@ createReview = (item) =>{
                 </div>
         </nav>
         {/* BUSINESS DETAILS COLUMN */}
+        <div className="row businessDetailsRow">
           {listItems}
+        </div>  
         {/* REVIEWS ROW */}
         <div className="row">
         <div className="col-xs-6 col-md-6 col-lg-6">
