@@ -2,14 +2,16 @@ import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 class BusinessDetails extends Component {
   state = {
     businesses: [],
     reviews: []
   }
   componentDidMount(){
+    // method is called when component is mounted
     const id = this.props.params.id
-    console.log(id)
     this.getBusinessDetails(id)
     this.getBusinessReviews(id)
   }
@@ -65,11 +67,49 @@ class BusinessDetails extends Component {
       //store the new state in the component's state
       this.setState(newState)
       // this sets the newState object as our new state
-      console.log(this.state.reviews)
     })
     .catch(error =>{
       console.log(error)
     })
+  }
+
+  // function to add review for a particular business
+  addBusinessReviews =(e)=>{
+    e.preventDefault()
+    // first get the business id
+    const id = this.props.params.id
+    const opinion = e.target.elements.businessOpinion.value;
+    // get data from the drop down 
+    var dropdown = document.getElementById("sel1");
+    var rating_select = dropdown.options[dropdown.selectedIndex].text;
+    const rating = rating_select
+
+    console.log(opinion)
+    console.log(rating)
+        axios.post(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}/reviews`, {
+            opinion: opinion,
+            rating: rating
+        }).then(response =>{
+            console.log("review added")
+            swal({
+                title: "Success!",
+                text: "You successfully added the review",
+                icon: "success",
+                button: "view",
+              });
+              this.componentDidMount()
+        })
+        .catch(error => {
+            if (error.response.status === 409){
+                const message = error.response.data.message
+                swal("Error!!", message, "error");
+            }
+            else if(error.response.status === 400){
+                const message = error.response.data[0].message
+                console.log(message)
+                swal("Error!!", message, "error");
+            }
+        });
   }
 
   // function to map the single business details
@@ -124,7 +164,6 @@ createReview = (item) =>{
         {/* BUSINESS DETAILS COLUMN */}
           {listItems}
         {/* REVIEWS ROW */}
-
         <div className="row">
         <div className="col-xs-6 col-md-6 col-lg-6">
         <h2 className="text-center">ALL REVIEWS</h2>
@@ -132,7 +171,7 @@ createReview = (item) =>{
         </div>
         <div className="col-xs-6 col-md-6 col-lg-6 well">
         <h2 className="text-center">ADD REVIEW</h2>
-        <form className="text-center">
+        <form className="text-center" onSubmit = {this.addBusinessReviews}>
                 <div className="form-group">
                     <input className="form-control" placeholder="enter business review" id="name-field" type="name" name="businessOpinion" />
                 </div>                
