@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
 import '../App.css';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 class BusinessDetails extends Component {
   state = {
     businesses: [],
@@ -84,33 +86,29 @@ class BusinessDetails extends Component {
 
     console.log(opinion)
     console.log(rating)
-        // axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/registration', {
-        //     email: email,
-        //     password: password,
-        //     confirm_password: confirm_password
-        // }).then(response =>{
-        //     console.log("registered user successfully")
-        //     browserHistory.push('/login')
-        //     // sweet alert pop up
-        //     swal({
-        //         title: "Success!",
-        //         text: "You successfully registered",
-        //         icon: "success",
-        //         button: "Log in",
-        //       });
-        // })
-        // .catch(error => {
-        //     if (error.response.status === 409){
-        //         const message = error.response.data.message
-        //         swal("Error!!", message, "error");
-        //     }
-        //     else if(error.response.status === 400){
-        //         const message = error.response.data[0].message
-        //         console.log(message)
-        //         swal("Error!!", message, "error");
-        //     }
-            
-        // });
+        axios.post(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}/reviews`, {
+            opinion: opinion,
+            rating: rating
+        }).then(response =>{
+            console.log("review added")
+            swal({
+                title: "Success!",
+                text: "You successfully added the review",
+                icon: "success",
+                button: "view",
+              });
+        })
+        .catch(error => {
+            if (error.response.status === 409){
+                const message = error.response.data.message
+                swal("Error!!", message, "error");
+            }
+            else if(error.response.status === 400){
+                const message = error.response.data[0].message
+                console.log(message)
+                swal("Error!!", message, "error");
+            }
+        });
   }
 
   // function to map the single business details
