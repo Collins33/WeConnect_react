@@ -105,8 +105,7 @@ class BusinessDetails extends Component {
                 swal("Error!!", message, "error");
             }
             else if(error.response.status === 400){
-                const message = error.response.data[0].message
-                console.log(message)
+                const message = "cannot add an empty response"
                 swal("Error!!", message, "error");
             }
         });
