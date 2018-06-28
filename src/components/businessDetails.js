@@ -47,7 +47,7 @@ class BusinessDetails extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-8 col-md-8 col-lg-8 well">
+    return <div className="col-xs-12 col-md-12 col-lg-12 well">
       <h1 className="title text-center">{item.name}</h1>
       <h1 className="text-center well">{item.category}</h1>
       <p className="text-center">{item.description}</p>
@@ -61,7 +61,6 @@ class BusinessDetails extends Component {
     const listItems=businesses.map(this.createBusiness)
 
     return (
-
         <div className="row">
         <nav className="navbar navbar-inverse">
                 <div className="container-fluid">
@@ -80,8 +79,35 @@ class BusinessDetails extends Component {
                 </ul>
                 </div>
         </nav>
-        
+        {/* BUSINESS DETAILS COLUMN */}
           {listItems}
+        {/* REVIEWS ROW */}
+
+        <div className="row">
+        <div className="col-xs-6 col-md-6 col-lg-6">
+        <h2 className="text-center">ALL REVIEWS</h2>
+        </div>
+        <div className="col-xs-6 col-md-6 col-lg-6 well">
+        <h2 className="text-center">ADD REVIEW</h2>
+        <form className="text-center">
+                <div className="form-group">
+                    <input className="form-control" placeholder="enter business review" id="name-field" type="name" name="businessOpinion" />
+                </div>                
+                <div class="form-group">
+                <label for="sel1">Select business rating:</label>
+                <select class="form-control" id="sel1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                </div>
+                <button className="btn btn-info form-button" type="submit">ADD REVIEW</button>
+            </form>
+        
+        </div>
+        </div>  
         </div>
     );
   }
