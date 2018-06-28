@@ -81,9 +81,9 @@ class Dashboard extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-12 col-md-12 col-lg-12 well myBusinessRow">
+    return <div className="col-xs-4 col-md-4 col-lg-4 well myBusinessRow">
       <h1 className="title text-center">{item.name}</h1>
-      <h1 className="text-center well">{item.category}</h1>
+      <h1 className="text-center well" id="businessCategory">{item.category}</h1>
       <p className="text-center">{item.description}</p>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
@@ -105,10 +105,10 @@ class Dashboard extends Component {
         <div className="row dashboardrow">
           <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
             <div className="row">
-             <h1>MY PROFILE</h1>
+            <a href="/"><h1>HOME</h1></a>
             </div>
             <div className="row" id="home-row">
-              <a href="/"><h1>HOME</h1></a>
+              <h1>MY PROFILE</h1>
             </div>
           </div>
           <div className="col-xs-9 col-md-9 col-lg-9">
