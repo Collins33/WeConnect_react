@@ -28,6 +28,8 @@ class BusinessList extends Component {
       const businessEntries = this.props.businesses;
       //map out the array into col-xs-3
       const listItems=businessEntries.map(this.createBusiness)
+      
+      if (this.props.businesses.length >0){
       return (
         <div className="row business-row">
         <a href="/addBusiness"><button className="btn btn-success">+ ADD BUSINESS</button></a>
@@ -38,6 +40,14 @@ class BusinessList extends Component {
         </div>        
 
       );
+    }
+    else{
+    return (
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
+    )
+  }
+
+      
   }
 }
 

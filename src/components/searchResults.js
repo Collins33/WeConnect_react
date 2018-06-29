@@ -55,7 +55,6 @@ class SearchResults extends Component {
     //get search business from the state
     const businesses = this.state.search_business
     const listItems=businesses.map(this.createBusiness)
-
     return (
         <div className = "row">
         <div>
@@ -92,6 +91,7 @@ class SearchResults extends Component {
         </div>
 
     );
+ 
   }
 }
 
