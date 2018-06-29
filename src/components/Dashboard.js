@@ -70,14 +70,14 @@ class Dashboard extends Component {
     }
     swal({
       title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
+      text: "Once deleted, you will not be able to recover business!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
     })
     .then((willDelete) => {
       if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
+        swal("Business successfully deleted", {
           icon: "success",
         });
         axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
@@ -89,7 +89,7 @@ class Dashboard extends Component {
           console.log(error)
         })
       } else {
-        swal("Your imaginary file is safe!");
+        swal("Final deletion was stopped");
       }
     });
   }
