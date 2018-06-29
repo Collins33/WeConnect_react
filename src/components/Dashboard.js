@@ -123,10 +123,13 @@ class Dashboard extends Component {
         <div className="row dashboardrow">
           <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
             <div className="row">
-            <a href="/"><h1>HOME</h1></a>
+              <h1 className="text-center title">WeConnect</h1>
+            </div>
+            <div className="row">
+            <a href="/"><h2>HOME</h2></a>
             </div>
             <div className="row" id="home-row">
-              <h1>MY PROFILE</h1>
+              <h2>MY PROFILE</h2>
             </div>
           </div>
           <div className="col-xs-9 col-md-9 col-lg-9">

@@ -56,8 +56,8 @@ body {
   color: white;  
 }
 .business-row{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .main-navbar{
   margin-bottom: 0px;
@@ -156,3 +156,10 @@ button:hover:before,button:hover:after{
   margin-left: auto;
   margin-right: auto 
 }
+.mainTitle{
+  font-size: 40px;
+}
+a { 
+  color: inherit;
+  font-family: 'Cabin', sans-serif;
+ } 

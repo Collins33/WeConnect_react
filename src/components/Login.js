@@ -23,7 +23,7 @@ class Login extends Component {
             // sweet alert pop up
             console.log("Log in successful")
             localStorage.setItem("auth_token", auth_token)
-            browserHistory.push('/businesses')
+            browserHistory.push('/dashboard')
             swal({
                 title: "Success!",
                 text: "You successfully logged in",
