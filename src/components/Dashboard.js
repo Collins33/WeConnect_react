@@ -68,15 +68,30 @@ class Dashboard extends Component {
       // config with the token
       headers: {'Authorization': "bearer " + auth_token}
     }
-    axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
-    .then(response =>{
-      console.log(response)
-      this.componentDidMount()
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover business!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
     })
-    .catch(error =>{
-      console.log(error)
-    })
-
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Business successfully deleted", {
+          icon: "success",
+        });
+        axios.delete(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,config)
+        .then(response =>{
+          console.log(response)
+          this.componentDidMount()
+        })
+        .catch(error =>{
+          console.log(error)
+        })
+      } else {
+        swal("Final deletion was stopped");
+      }
+    });
   }
   createBusiness = (item) =>{
     //map each item into a column
