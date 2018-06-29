@@ -7,7 +7,8 @@ import { browserHistory} from 'react-router';
 
 class Dashboard extends Component {
   state = {
-    businesses: []
+    businesses: [],
+    loading: true
   }
   // add the componentDidMount lifecylce method
   componentDidMount(){
@@ -29,7 +30,8 @@ class Dashboard extends Component {
           location : business.location,
           category: business.category,
           description: business.description,
-          id: business.id
+          id: business.id,
+          loading: false
         }
       })
       //create a new state without mutating the original state
@@ -37,6 +39,7 @@ class Dashboard extends Component {
       const newState = Object.assign(this.state, {businesses: newBusiness}) // new state object
       //store the new state in the component's state
       this.setState(newState)
+      this.setState({ loading: false })
       // this sets the newState object as our new state
     })
     .catch(error => {
@@ -115,7 +118,70 @@ class Dashboard extends Component {
   render() {
     const businesses = this.state.businesses;
     const listItems=businesses.map(this.createBusiness)
+    if (this.state.loading){
+      return(
+        <div className="row dashboardrow">
+          <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
+            <div className="row">
+            <a href="/"><h1>HOME</h1></a>
+            </div>
+            <div className="row" id="home-row">
+              <h1>MY PROFILE</h1>
+            </div>
+          </div>
+          <div className="col-xs-9 col-md-9 col-lg-9">
+           <div className="row">
+           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
+           </div>
+           <div className="row">
+            <h1 id="myBusiness">MY BUSINESSES</h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
+           </div>
+          </div>
 
+          {/* modal */}
+
+          <div id="firstmodal" className="modal fade" role="dialog">
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <button type="button" className="close" data-dismiss="modal"></button>
+                  <h4 className="modal-title">UPDATE BUSINESS</h4>
+                </div>
+                <div className="modal-body">
+                  <h2>FILL TO UPDATE BUSINESS</h2>
+                  <form id="playerinfo">
+                    <div className="form-group">
+                      <label>ENTER NEW BUSINESS NAME</label>
+                      <input type="text" className="form-control" id="name" />
+                    </div>
+                    <div className="form-group">
+                      <label>ENTER NEW DESCRIPTION</label>
+                      <input type="number" className="form-control" id="description" />
+                    </div>
+                    <div className="form-group">
+                      <label>ENTER NEW BUSINESS LOCATION</label>
+                      <input type="number" className="form-control" id="location" />
+                    </div>
+                    <div className="form-group">
+                      <label>ENTER NEW BUSINESS CONTACT</label>
+                      <input type="number" className="form-control" id="contact" />
+                    </div>
+                    <button className="btn" type="submit">SUBMIT</button>
+                  </form>
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+
+      )
+    }
+    else{
     return (
         <div className="row dashboardrow">
           <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
@@ -178,6 +244,7 @@ class Dashboard extends Component {
         
 
     );
+  }
   }
 }
 
