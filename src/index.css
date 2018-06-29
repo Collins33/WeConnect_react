@@ -159,3 +159,7 @@ button:hover:before,button:hover:after{
 .mainTitle{
   font-size: 40px;
 }
+a { 
+  color: inherit;
+  font-family: 'Cabin', sans-serif;
+ } 
