@@ -187,16 +187,26 @@ class Dashboard extends Component {
     else{
     return (
         <div className="row dashboardrow">
-          <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
+           <div className="col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
             <div className="row">
-            <a href="/"><h1>HOME</h1></a>
+              <h1 className="text-center title">WeConnect</h1>
             </div>
+            <hr></hr>
+            <div className="row">
+            <a href="/"><h2>HOME</h2></a>
+            </div>
+            <hr></hr>
             <div className="row" id="home-row">
-              <h1>MY PROFILE</h1>
+              <h2>MY PROFILE</h2>
             </div>
+            <hr></hr>
           </div>
           <div className="col-xs-9 col-md-9 col-lg-9">
            <div className="row">
+           <div className="row">
+              <h1 className="text-center title">DASHBOARD</h1>
+              <hr></hr>
+            </div>
            <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
            </div>
            <div className="row">
