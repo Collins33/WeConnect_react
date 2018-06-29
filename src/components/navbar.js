@@ -11,7 +11,7 @@ class Navbar extends Component {
             <nav className="navbar navbar-inverse main-navbar">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <a className="navbar-brand title" href="/">WeConnect</a>
+                        <a className="navbar-brand title mainTitle" href="/">WeConnect</a>
                     </div>
                     <ul className="nav navbar-nav">
                     </ul>
