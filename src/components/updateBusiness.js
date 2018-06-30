@@ -7,7 +7,8 @@ import swal from 'sweetalert';
 class UpdateBusiness extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
   }
   state = {
      category: '',
@@ -90,10 +91,24 @@ class UpdateBusiness extends Component {
           console.log(error)
         });
   }
-  
-  handleChange(event) {
+
+
+   // functions to handle change in values of the form
+   // form values are bound to the state so the state has to be changed when input value changes
+  handleNameChange(event) {
     this.setState({name: event.target.value});
   }
+  handleDescriptionChange(event) {
+    this.setState({description: event.target.value});
+  }
+  handleContactChange(event) {
+    this.setState({contact: event.target.value});
+  }
+  handleLocationChange(event) {
+    this.setState({location: event.target.value});
+  }
+
+
   // render the ui
   render() {
     if (this.state.loading){
@@ -108,19 +123,19 @@ class UpdateBusiness extends Component {
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.name} onChange={this.handleChange}/>
+          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.name} onChange={this.handleNameChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
-          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.description}/>
+          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.description} onChange={this.handleChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new contact</h3>
-          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.contact}/>
+          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.contact} onChange={this.handleChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new location</h3>
-          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.location}/>
+          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.location} onChange={this.handleChange}/>
         </div>
         <div class="form-group">
             <label for="sel1">Select new Category:</label>
