@@ -3,6 +3,7 @@ import {Animated} from 'react-animated-css';
 import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { browserHistory} from 'react-router';
 
 class UpdateBusiness extends Component {
   constructor(props) {
@@ -85,10 +86,13 @@ class UpdateBusiness extends Component {
         payload,config).then(response =>{
           swal({
             title: "Success!",
-            text: "You successfully added the business",
+            text: "You successfully updated the business",
             icon: "success",
             button: "Explore",
-          });}
+          });
+          browserHistory.push('/dashboard')
+        }
+          
         ).catch(error =>{
           console.log(error)
         });

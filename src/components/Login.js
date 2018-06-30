@@ -8,7 +8,6 @@ class Login extends Component {
     state = {
         login:[]
     }
-   
     login = (e) =>{
         e.preventDefault()
         const email = e.target.elements.email.value;
