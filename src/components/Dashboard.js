@@ -102,7 +102,7 @@ class Dashboard extends Component {
   // function to update business details
   updateBusiness = (business_id,e)=>{
     e.preventDefault()
-    console.log(business_id)
+    console.log(business_id) 
   }
 
   // function to map out business details
@@ -123,7 +123,7 @@ class Dashboard extends Component {
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name" id="businessName" type="name" name="businessName" value={item.name}/>
+          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={item.name}/>
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
