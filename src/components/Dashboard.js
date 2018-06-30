@@ -117,41 +117,12 @@ class Dashboard extends Component {
       <p className="text-center">{item.description}</p>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
-      <div className="col-xs-12 col-md-12 col-lg-12">
+      <div className="col-xs-6 col-md-6 col-lg-6">
       <button className="btn btn-danger manipulatebusinessbutton" onClick={(e) => this.deleteBusiness(item.id, e)}>Delete business</button>
       </div>
-
-      <form className="updateForm well">
-        <h1 className="text-center">UPDATE BUSINESS</h1>
-        <div className="form-group">
-          <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={item.name}/>
-        </div>
-        <div className="form-group">
-          <h3>Enter new description</h3>
-          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={item.description}/>
-        </div>
-        <div className="form-group">
-          <h3>Enter new contact</h3>
-          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={item.contact}/>
-        </div>
-        <div className="form-group">
-          <h3>Enter new location</h3>
-          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={item.location}/>
-        </div>
-        <div class="form-group">
-            <label for="sel1">Select new Category:</label>
-              <select class="form-control" id="sel1">
-                  <option>technology</option>
-                  <option>agriculture</option>
-                  <option>retail</option>
-                  <option>fast-food</option>
-                  <option>software</option>
-                  <option>hardware</option>
-              </select>
-        </div>
-        <button className="btn btn-info form-button" type="submit" onClick={(e) => this.updateBusiness(item.id, e)}>UPDATE BUSINESS</button>
-      </form>
+      <div className="col-xs-6 col-md-6 col-lg-6">
+      <button className="btn btn-info form-button" type="submit" onClick={(e) => this.updateBusiness(item.id, e)}>UPDATE BUSINESS</button>
+      </div>
       </div>
       
 }
