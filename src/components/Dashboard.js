@@ -10,7 +10,9 @@ class Dashboard extends Component {
     businesses: [],
     loading: true
   }
+
   // add the componentDidMount lifecylce method
+  // gets single business when component is mounted
   componentDidMount(){
     const auth_token = localStorage.getItem("auth_token")
     const config = {
@@ -63,8 +65,8 @@ class Dashboard extends Component {
     });
   }
 
+  // function to delete single business
   deleteBusiness = (business_id)=>{
-    
     console.log(business_id)
     const auth_token = localStorage.getItem("auth_token")
     const config = {
@@ -96,6 +98,8 @@ class Dashboard extends Component {
       }
     });
   }
+
+  // function to map out business details
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
@@ -105,13 +109,43 @@ class Dashboard extends Component {
       <p className="text-center">{item.description}</p>
       <h3>{item.contact}</h3>
       <h3>{item.location}</h3>
-      <div className="col-xs-6 col-md-6 col-lg-6">
-      <button className="btn btn-primary manipulatebusinessbutton" data-toggle="modal" data-target="#firstmodal">Update business</button>
-      </div>
-      <div className="col-xs-6 col-md-6 col-lg-6">
+      <div className="col-xs-12 col-md-12 col-lg-12">
       <button className="btn btn-danger manipulatebusinessbutton" onClick={(e) => this.deleteBusiness(item.id, e)}>Delete business</button>
       </div>
+
+      <form className="updateForm well">
+        <h1 className="text-center">UPDATE BUSINESS</h1>
+        <div className="form-group">
+          <h3>Enter new name</h3>
+          <input className="form-control" placeholder="enter new name" id="businessName" type="name" name="businessName" value={item.name}/>
+        </div>
+        <div className="form-group">
+          <h3>Enter new description</h3>
+          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={item.description}/>
+        </div>
+        <div className="form-group">
+          <h3>Enter new contact</h3>
+          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={item.contact}/>
+        </div>
+        <div className="form-group">
+          <h3>Enter new location</h3>
+          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={item.location}/>
+        </div>
+        <div class="form-group">
+            <label for="sel1">Select new Category:</label>
+              <select class="form-control" id="sel1">
+                  <option>technology</option>
+                  <option>agriculture</option>
+                  <option>retail</option>
+                  <option>fast-food</option>
+                  <option>software</option>
+                  <option>hardware</option>
+              </select>
+        </div>
+        <button className="btn btn-info form-button" type="submit">UPDATE BUSINESS</button>
+      </form>
       </div>
+      
 }
 
 
@@ -140,50 +174,12 @@ class Dashboard extends Component {
             <h1 id="myBusiness">MY BUSINESSES</h1>
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
            </div>
-          </div>
-
-          {/* modal */}
-
-          <div id="firstmodal" className="modal fade" role="dialog">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <button type="button" className="close" data-dismiss="modal"></button>
-                  <h4 className="modal-title">UPDATE BUSINESS</h4>
-                </div>
-                <div className="modal-body">
-                  <h2>FILL TO UPDATE BUSINESS</h2>
-                  <form id="playerinfo">
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS NAME</label>
-                      <input type="text" className="form-control" id="name" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW DESCRIPTION</label>
-                      <input type="number" className="form-control" id="description" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS LOCATION</label>
-                      <input type="number" className="form-control" id="location" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS CONTACT</label>
-                      <input type="number" className="form-control" id="contact" />
-                    </div>
-                    <button className="btn" type="submit">SUBMIT</button>
-                  </form>
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-         
+          </div>     
         </div>
 
       )
     }
+
     else{
     return (
         <div className="row dashboardrow">
@@ -214,45 +210,6 @@ class Dashboard extends Component {
             {listItems}
            </div>
           </div>
-
-          {/* modal */}
-
-          <div id="firstmodal" className="modal fade" role="dialog">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <button type="button" className="close" data-dismiss="modal"></button>
-                  <h4 className="modal-title">UPDATE BUSINESS</h4>
-                </div>
-                <div className="modal-body">
-                  <h2>FILL TO UPDATE BUSINESS</h2>
-                  <form id="playerinfo">
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS NAME</label>
-                      <input type="text" className="form-control" id="name" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW DESCRIPTION</label>
-                      <input type="number" className="form-control" id="description" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS LOCATION</label>
-                      <input type="number" className="form-control" id="location" />
-                    </div>
-                    <div className="form-group">
-                      <label>ENTER NEW BUSINESS CONTACT</label>
-                      <input type="number" className="form-control" id="contact" />
-                    </div>
-                    <button className="btn" type="submit">SUBMIT</button>
-                  </form>
-                </div>
-                <div className="modal-footer">
-                  <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-         
         </div>
         
 
