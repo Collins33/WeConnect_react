@@ -66,15 +66,15 @@ class UpdateBusiness extends Component {
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
-          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription"/>
+          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.business[0].description}/>
         </div>
         <div className="form-group">
           <h3>Enter new contact</h3>
-          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact"/>
+          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.business[0].contact}/>
         </div>
         <div className="form-group">
           <h3>Enter new location</h3>
-          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation"/>
+          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.business[0].location}/>
         </div>
         <div class="form-group">
             <label for="sel1">Select new Category:</label>
