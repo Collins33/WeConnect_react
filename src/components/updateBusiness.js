@@ -9,6 +9,8 @@ class UpdateBusiness extends Component {
     super(props);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleContactChange = this.handleContactChange.bind(this);
   }
   state = {
      category: '',
