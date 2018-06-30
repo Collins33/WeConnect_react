@@ -1,19 +1,68 @@
 import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
 import '../App.css';
+import axios from 'axios';
+import swal from 'sweetalert';
 
 class UpdateBusiness extends Component {
   state = {
-     business:[]
+     business:[],
+     loading: true
   }
+
+  componentDidMount(){
+    const id = this.props.params.id
+    console.log(id)
+    this.getBusinessDetails(id)
+    
+  }
+
+  // function to make call to get business details
+  getBusinessDetails = (id)=>{
+    axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}`)
+    .then(response =>{
+      // this one is executed immediately the data returns from the backend
+      //create array of businesses with the information you need
+      const newBusiness = response.data.map(business => {
+        // use map to get only the relevant data from the response 
+        return{
+          // we are taking business name and business contact from the response
+          name: business.name,
+          contact: business.contact,
+          location : business.location,
+          category: business.category,
+          description: business.description,
+          id: business.id
+        }
+      })
+      //create a new state without mutating the original state
+      // newState is now equal to the new object which is the newBusiness object
+      const newState = Object.assign(this.state, {business: newBusiness}) // new state object
+      //store the new state in the component's state
+      this.setState(newState)
+      // this sets the newState object as our new state
+      console.log(this.state.business[0].name)
+      this.setState({ loading: false })
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
+
   render() {
+    if (this.state.loading){
+      return(
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
+      )
+    }
+    else{
     return (
         <div className="row signuprow">
         <form className="updateForm well">
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name"  type="name" name="businessName"/>
+          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.business[0].name}/>
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
@@ -43,6 +92,7 @@ class UpdateBusiness extends Component {
         </div>
           
     );
+  }
   }
 }
 
