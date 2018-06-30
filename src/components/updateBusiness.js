@@ -47,16 +47,52 @@ class UpdateBusiness extends Component {
       console.log(error)
     })
   }
+  handleChange(event) {
+    this.setState({business: event.target.value});
+  }
 
   updateBusinessDetails=(e)=>{
     e.preventDefault()
     console.log("hello")
+    // get details from the update form
+    const name = e.target.elements.businessName.value;
+    const desc = e.target.elements.businessDescription.value;
+    const contact = e.target.elements.businessContact.value;
+    const location = e.target.elements.businessLocation.value;
+    var dropdown = document.getElementById("sel1");
+    var category_select = dropdown.options[dropdown.selectedIndex].text;
+    const category = category_select
+    // get business id
+    const business_id = this.props.params.id
+    // get auth_token
+    const auth_token = localStorage.getItem("auth_token")
+    // create payloads
+    const config = {
+      // config with the token
+      headers: {'Authorization': "bearer " + auth_token}
+    }
+    // payload containing business information
+    const payload = {
+        name:name,
+        description: desc,
+        contact: contact,
+        location: location,
+        category: category
+    }
+    console.log(payload)
+    // make the put request
+    axios.put(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${business_id}`,
+        payload,config).then(response =>{
+          swal({
+            title: "Success!",
+            text: "You successfully added the business",
+            icon: "success",
+            button: "Explore",
+          });}
+        ).catch(error =>{
+          console.log(error)
+        });
   }
-
-
-
-
-
 
   // render the ui
   render() {
