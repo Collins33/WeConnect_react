@@ -16,7 +16,6 @@ class UpdateBusiness extends Component {
     this.getBusinessDetails(id)
     
   }
-
   // function to make call to get business details
   getBusinessDetails = (id)=>{
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}`)
@@ -49,6 +48,17 @@ class UpdateBusiness extends Component {
     })
   }
 
+  updateBusinessDetails=(e)=>{
+    e.preventDefault()
+    console.log("hello")
+  }
+
+
+
+
+
+
+  // render the ui
   render() {
     if (this.state.loading){
       return(
@@ -58,7 +68,7 @@ class UpdateBusiness extends Component {
     else{
     return (
         <div className="row signuprow">
-        <form className="updateForm well">
+        <form className="updateForm well" onSubmit={this.updateBusinessDetails}>
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
