@@ -13,6 +13,7 @@ import Business from './components/Business';
 import Reset from './components/Reset';
 import AddBusiness from './components/AddBusiness';
 import BusinessDetails from './components/businessDetails';
+import UpdateBusiness from './components/updateBusiness';
 // components for routing
 
 
@@ -28,6 +29,7 @@ render(
     <Route path="/reset" component={Reset} />
     <Route path="/addBusiness" component={AddBusiness} />
     <Route path="/business/:id" component={BusinessDetails} />
+    <Route path="/business/:id/updateBusiness" component={UpdateBusiness} />
   </Router>,
 document.getElementById('root'),
 );

@@ -102,6 +102,9 @@ body {
 }
 .manipulatebusinessbutton{
   text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
 }
 #businessCategory{
   color: #0F2027;
@@ -162,4 +165,9 @@ button:hover:before,button:hover:after{
 a { 
   color: inherit;
   font-family: 'Cabin', sans-serif;
- } 
+ }
+ .updateForm{
+  margin-top: 60px;
+  color: #0F2027;
+ }
+ 
