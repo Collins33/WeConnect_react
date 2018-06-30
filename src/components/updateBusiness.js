@@ -130,6 +130,25 @@ class UpdateBusiness extends Component {
     else{
     return (
         <div className="row signuprow">
+        <nav className="navbar navbar-inverse main-navbar">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand title mainTitle" href="/">WeConnect</a>
+                    </div>
+                    <ul className="nav navbar-nav">
+                    </ul>
+                    <ul className="nav navbar-nav navbar-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/businesses">Businesses</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/search">Search for business</a></li>
+                        <li><a href="signup"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+
         <form className="updateForm well" onSubmit={this.updateBusinessDetails}>
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
@@ -160,6 +179,7 @@ class UpdateBusiness extends Component {
               </select>
         </div>
         <button className="btn btn-info form-button" type="submit">UPDATE BUSINESS</button>
+       
       </form>
         </div>
           
