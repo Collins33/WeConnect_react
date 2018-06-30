@@ -6,7 +6,11 @@ import swal from 'sweetalert';
 
 class UpdateBusiness extends Component {
   state = {
-     business:[],
+     category: '',
+     contact: '',
+     description: '',
+     location: '',
+     name:'',
      loading: true
   }
 
@@ -22,26 +26,38 @@ class UpdateBusiness extends Component {
     .then(response =>{
       // this one is executed immediately the data returns from the backend
       //create array of businesses with the information you need
-      const newBusiness = response.data.map(business => {
-        // use map to get only the relevant data from the response 
-        return{
-          // we are taking business name and business contact from the response
-          name: business.name,
-          contact: business.contact,
-          location : business.location,
-          category: business.category,
-          description: business.description,
-          id: business.id
-        }
-      })
-      //create a new state without mutating the original state
-      // newState is now equal to the new object which is the newBusiness object
-      const newState = Object.assign(this.state, {business: newBusiness}) // new state object
-      //store the new state in the component's state
-      this.setState(newState)
-      // this sets the newState object as our new state
-      console.log(this.state.business[0].name)
+      // const newBusiness = response.data.map(business => {
+      //   // use map to get only the relevant data from the response 
+      //   return{
+      //     // we are taking business name and business contact from the response
+      //     name: business.name,
+      //     contact: business.contact,
+      //     location : business.location,
+      //     category: business.category,
+      //     description: business.description,
+      //     id: business.id
+      //   }
+      // })
+      // //create a new state without mutating the original state
+      // // newState is now equal to the new object which is the newBusiness object
+      // const newState = Object.assign(this.state, {business: newBusiness}) // new state object
+      // //store the new state in the component's state
+      // this.setState(newState)
+      // // this sets the newState object as our new state
+      // console.log(this.state.business[0].name)
+      const name = response.data[0].name
+      const category = response.data[0].category
+      const contact = response.data[0].contact
+      const description = response.data[0].description
+      const location = response.data[0].location
+
+      // set state after get request with business details
       this.setState({ loading: false })
+      this.setState({ name: name })
+      this.setState({ contact: contact })
+      this.setState({ description: description })
+      this.setState({ location: location })
+      this.setState({ category: category })
     })
     .catch(error =>{
       console.log(error)
@@ -93,7 +109,10 @@ class UpdateBusiness extends Component {
           console.log(error)
         });
   }
-
+  
+  // handleChange(event) {
+  //   this.setState({business: event.target.elements.businessName.value});
+  // }
   // render the ui
   render() {
     if (this.state.loading){
@@ -108,19 +127,19 @@ class UpdateBusiness extends Component {
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.business[0].name}/>
+          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.name}/>
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
-          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.business[0].description}/>
+          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" />
         </div>
         <div className="form-group">
           <h3>Enter new contact</h3>
-          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.business[0].contact}/>
+          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" />
         </div>
         <div className="form-group">
           <h3>Enter new location</h3>
-          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.business[0].location}/>
+          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" />
         </div>
         <div class="form-group">
             <label for="sel1">Select new Category:</label>

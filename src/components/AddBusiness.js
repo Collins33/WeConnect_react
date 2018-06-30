@@ -6,7 +6,6 @@ import { browserHistory} from 'react-router';
 
 class AddBusiness extends Component {
     state = {
-
     }
     addBusiness= (e)=>{
         e.preventDefault()
