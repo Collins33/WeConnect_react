@@ -94,7 +94,12 @@ class UpdateBusiness extends Component {
         }
           
         ).catch(error =>{
-          console.log(error)
+          if (error.response.status === 400){
+            swal("Error!!", "Cannot update the business with empty fields", "error");
+          }
+          else if (error.response.status === 403){
+            swal("Error!!", "You must be logged in to update a business", "error");
+          }
         });
   }
 
