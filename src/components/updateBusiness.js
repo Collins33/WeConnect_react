@@ -129,15 +129,15 @@ class UpdateBusiness extends Component {
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
-          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.description} onChange={this.handleChange}/>
+          <input className="form-control" placeholder="enter new description" id="businessDescription" type="name" name="businessDescription" value={this.state.description} onChange={this.handleDescriptionChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new contact</h3>
-          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.contact} onChange={this.handleChange}/>
+          <input className="form-control" placeholder="enter new contact" id="businessContact" type="number" name="businessContact" value={this.state.contact} onChange={this.handleContactChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new location</h3>
-          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.location} onChange={this.handleChange}/>
+          <input className="form-control" placeholder="enter new location" id="businessLocation" type="name" name="businessLocation" value={this.state.location} onChange={this.handleLocationChange}/>
         </div>
         <div class="form-group">
             <label for="sel1">Select new Category:</label>
