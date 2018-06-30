@@ -99,6 +99,12 @@ class Dashboard extends Component {
     });
   }
 
+  // function to update business details
+  updateBusiness = (business_id,e)=>{
+    e.preventDefault()
+    console.log(business_id)
+  }
+
   // function to map out business details
   createBusiness = (item) =>{
     //map each item into a column
@@ -142,7 +148,7 @@ class Dashboard extends Component {
                   <option>hardware</option>
               </select>
         </div>
-        <button className="btn btn-info form-button" type="submit">UPDATE BUSINESS</button>
+        <button className="btn btn-info form-button" type="submit" onClick={(e) => this.updateBusiness(item.id, e)}>UPDATE BUSINESS</button>
       </form>
       </div>
       
