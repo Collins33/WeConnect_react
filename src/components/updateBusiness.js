@@ -5,6 +5,10 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 class UpdateBusiness extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
   state = {
      category: '',
      contact: '',
@@ -24,27 +28,7 @@ class UpdateBusiness extends Component {
   getBusinessDetails = (id)=>{
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${id}`)
     .then(response =>{
-      // this one is executed immediately the data returns from the backend
-      //create array of businesses with the information you need
-      // const newBusiness = response.data.map(business => {
-      //   // use map to get only the relevant data from the response 
-      //   return{
-      //     // we are taking business name and business contact from the response
-      //     name: business.name,
-      //     contact: business.contact,
-      //     location : business.location,
-      //     category: business.category,
-      //     description: business.description,
-      //     id: business.id
-      //   }
-      // })
-      // //create a new state without mutating the original state
-      // // newState is now equal to the new object which is the newBusiness object
-      // const newState = Object.assign(this.state, {business: newBusiness}) // new state object
-      // //store the new state in the component's state
-      // this.setState(newState)
-      // // this sets the newState object as our new state
-      // console.log(this.state.business[0].name)
+      // get business details from the request response
       const name = response.data[0].name
       const category = response.data[0].category
       const contact = response.data[0].contact
@@ -62,9 +46,6 @@ class UpdateBusiness extends Component {
     .catch(error =>{
       console.log(error)
     })
-  }
-  handleChange(event) {
-    this.setState({business: event.target.value});
   }
 
   updateBusinessDetails=(e)=>{
@@ -110,9 +91,9 @@ class UpdateBusiness extends Component {
         });
   }
   
-  // handleChange(event) {
-  //   this.setState({business: event.target.elements.businessName.value});
-  // }
+  handleChange(event) {
+    this.setState({name: event.target.value});
+  }
   // render the ui
   render() {
     if (this.state.loading){
@@ -127,7 +108,7 @@ class UpdateBusiness extends Component {
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
           <h3>Enter new name</h3>
-          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.name}/>
+          <input className="form-control" placeholder="enter new name"  type="name" name="businessName" value={this.state.name} onChange={this.handleChange}/>
         </div>
         <div className="form-group">
           <h3>Enter new description</h3>
