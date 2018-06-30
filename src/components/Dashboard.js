@@ -5,6 +5,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import { browserHistory} from 'react-router';
 
+
 class Dashboard extends Component {
   state = {
     businesses: [],
@@ -101,8 +102,9 @@ class Dashboard extends Component {
 
   // function to update business details
   updateBusiness = (business_id,e)=>{
-    e.preventDefault()
-    console.log(business_id) 
+    console.log(business_id)
+    const business_update_route = `/business/${business_id}/updateBusiness`
+    browserHistory.push(business_update_route)  
   }
 
   // function to map out business details

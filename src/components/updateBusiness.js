@@ -4,7 +4,7 @@ import '../App.css';
 
 class UpdateBusiness extends Component {
   state = {
-     business=[]
+     business:[]
   }
   render() {
     return (
