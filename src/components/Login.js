@@ -41,7 +41,7 @@ class Login extends Component {
     return (
         <div className="row signuprow">
         <div className="row form-column">
-            <div className="col-sm-12 col-md-12 col-lg-12 well">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center title">WeConnect</h1>
                 <h1 className="text-center">LOG-IN</h1>
                 <form onSubmit={this.login} className="text-center">

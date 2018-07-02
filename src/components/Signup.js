@@ -51,7 +51,7 @@ class Signup extends Component {
         
         </h2>
         <div className="row form-column">
-            <div className="col-sm-12 col-md-12 col-lg-12 well">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 well">
                 <h1 className="text-center title">WeConnect</h1>
                 <h1 className="text-center">SIGN-UP</h1>
                 <form onSubmit={this.signUp} className="text-center">
