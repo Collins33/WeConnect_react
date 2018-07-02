@@ -6,8 +6,8 @@ import swal from 'sweetalert';
 import { browserHistory} from 'react-router';
 
 class UpdateBusiness extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -24,9 +24,7 @@ class UpdateBusiness extends Component {
 
   componentDidMount(){
     const id = this.props.params.id
-    console.log(id)
     this.getBusinessDetails(id)
-    
   }
   // function to make call to get business details
   getBusinessDetails = (id)=>{
@@ -54,7 +52,6 @@ class UpdateBusiness extends Component {
 
   updateBusinessDetails=(e)=>{
     e.preventDefault()
-    console.log("hello")
     // get details from the update form
     const name = e.target.elements.businessName.value;
     const desc = e.target.elements.businessDescription.value;
@@ -92,18 +89,17 @@ class UpdateBusiness extends Component {
           });
           browserHistory.push('/dashboard')
         }
-          
         ).catch(error =>{
+          // the response message if user tries to leave fields missing when updating
           if (error.response.status === 400){
             swal("Error!!", "Cannot update the business with empty fields", "error");
           }
+          // response if user is logged out
           else if (error.response.status === 403){
             swal("Error!!", "You must be logged in to update a business", "error");
           }
         });
   }
-
-
    // functions to handle change in values of the form
    // form values are bound to the state so the state has to be changed when input value changes
   handleNameChange(event) {
@@ -118,7 +114,6 @@ class UpdateBusiness extends Component {
   handleLocationChange(event) {
     this.setState({location: event.target.value});
   }
-
 
   // render the ui
   render() {
@@ -147,8 +142,7 @@ class UpdateBusiness extends Component {
                     </ul>
                 </div>
             </nav>
-
-
+         {/* form to update business details */}
         <form className="updateForm well" onSubmit={this.updateBusinessDetails}>
         <h1 className="text-center">UPDATE BUSINESS</h1>
         <div className="form-group">
@@ -179,10 +173,8 @@ class UpdateBusiness extends Component {
               </select>
         </div>
         <button className="btn btn-info form-button" type="submit">UPDATE BUSINESS</button>
-       
       </form>
         </div>
-          
     );
   }
   }
