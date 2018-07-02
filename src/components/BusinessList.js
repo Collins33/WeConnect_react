@@ -9,7 +9,7 @@ class BusinessList extends Component {
   createBusiness = (item) =>{
       //map each item into a column
       //return each column
-      return <div className="col-xs-4 col-md-4 col-lg-4 well business">
+      return <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 well business">
         <h1 className="title well">{item.name}</h1>
         <button className="btn btn-info" onClick={(e) => this.showBusinessDetails(item.id, e)}>Read more ...</button>
         </div>
