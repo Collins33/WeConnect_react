@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { browserHistory} from 'react-router';
 
 class SearchResults extends Component {
   state = {
@@ -11,13 +12,20 @@ class SearchResults extends Component {
   }
 
   createBusiness = (item) =>{
-    return <a href="/"><div className="col-xs-12 col-md-12 col-lg-12 panel">
+    return <div className="col-xs-12 col-md-12 col-lg-12 panel">
     <h1>{item.name}</h1>
     <h4>{item.location}</h4>
     <h4>{item.description}</h4>
     <h4>{item.category}</h4>
     <h4>{item.contact}</h4>
-    </div></a>
+    <button className="btn btn-info" onClick={(e) => this.showBusinessDetails(item.id, e)}>Read more ...</button>
+    </div>
+  }
+  // method to redirect to the component displaying details about the business
+  showBusinessDetails = (business_id) =>{
+    console.log(business_id)
+    const business_detail_route = `/business/${business_id}`
+    browserHistory.push(business_detail_route)   
   }
 
   searchBusiness = async (e) =>{
@@ -28,13 +36,14 @@ class SearchResults extends Component {
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/searches?q=${search}`)
     .then(response =>{
       //create an array of businesses with the info you need
-      const foundBusiness = response.data.map(c =>{
+      const foundBusiness = response.data.map(business =>{
         return{
-          name: c.name,
-          contact: c.contact,
-          category:c.category,
-          location:c.location,
-          description:c.description
+          name: business.name,
+          contact: business.contact,
+          category:business.category,
+          location:business.location,
+          description:business.description,
+          id: business.id
         }
       })
       //create a new state without affecting the current state
