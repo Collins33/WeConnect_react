@@ -28,7 +28,9 @@ class SearchResults extends Component {
     const business_detail_route = `/business/${business_id}`
     browserHistory.push(business_detail_route)   
   }
-  componentDidMount(){
+
+  // called when the component is mounted
+  noBusinessFound(){
     const foundBusiness = []
     const newState = Object.assign({}, this.state, {search_business: foundBusiness})
     this.setState(newState)
@@ -63,7 +65,7 @@ class SearchResults extends Component {
     .catch(error => {
       if (error.response.status === 404){
         swal("Error!!", "Business does not exist", "error");
-        this.componentDidMount()
+        this.noBusinessFound()
         this.setState({ loading: false })
       }
     });
