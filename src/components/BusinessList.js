@@ -21,7 +21,6 @@ class BusinessList extends Component {
     const business_detail_route = `/business/${business_id}`
     browserHistory.push(business_detail_route)   
   }
-  
 
   render() {
       //get the businesses that were passed as props from app.js
