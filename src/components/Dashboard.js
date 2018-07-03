@@ -175,14 +175,15 @@ class Dashboard extends Component {
               <h2>MY PROFILE</h2>
             </div>
             <hr></hr>
+            <div className="row" id="home-row">
+            <a href="/addBusiness"><button className="btn btn-success">+ ADD BUSINESS</button></a>
+            </div>
+            <hr></hr>
           </div>
           <div className="col-sm-9 col-xs-9 col-md-9 col-lg-9">
            <div className="row">
-           <div className="row">
               <h1 className="text-center title">DASHBOARD</h1>
               <hr></hr>
-            </div>
-           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
            </div>
            <div className="row">
             <h1 id="myBusiness">MY BUSINESSES</h1>
