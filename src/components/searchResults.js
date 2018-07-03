@@ -34,6 +34,7 @@ class SearchResults extends Component {
   noBusinessFound(){
     const foundBusiness = []
     const newState = Object.assign({}, this.state, {search_business: foundBusiness})
+    const newFilterState = Object.assign({}, this.state, {filter_business: foundBusiness})
     this.setState(newState)
   }
 
@@ -101,7 +102,13 @@ class SearchResults extends Component {
       //store the new state in the component's state
       this.setState(newState)
       this.setState({ loading: false })
-    })
+    }).catch(error => {
+      if (error.response.status === 404){
+        swal("Error!!", "No business in that category", "error");
+        this.noBusinessFound()
+        this.setState({ loading: false })
+      }
+    });
   }
 
 
