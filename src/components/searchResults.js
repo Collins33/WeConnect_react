@@ -85,7 +85,22 @@ class SearchResults extends Component {
     // make get request to get business in a category
     axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${category}`)
     .then(response=>{
-      console.log(response)
+      //create an array of businesses with the info you need
+      const foundBusiness = response.data.map(business =>{
+        return{
+          name: business.name,
+          contact: business.contact,
+          category:business.category,
+          location:business.location,
+          description:business.description,
+          id: business.id
+        }
+      })
+      //create a new state without affecting the current state
+      const newState = Object.assign({}, this.state, {filter_business: foundBusiness})
+      //store the new state in the component's state
+      this.setState(newState)
+      this.setState({ loading: false })
     })
   }
 
