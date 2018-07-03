@@ -38,6 +38,7 @@ class AddBusiness extends Component {
         axios.post('https://we-connect-muru.herokuapp.com/api/v2/businesses',
         payload,config).then(response =>{
         console.log(response)
+        browserHistory.push('/dashboard')
         swal({
             title: "Success!",
             text: "You successfully added the business",
