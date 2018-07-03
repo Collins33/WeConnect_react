@@ -133,27 +133,8 @@ class Dashboard extends Component {
     const listItems=businesses.map(this.createBusiness)
     if (this.state.loading){
       return(
-        <div className="dashboardrow container-fluid">
-          <div className="col-sm-3 col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
-            <div className="row">
-              <h1 className="text-center title">WeConnect</h1>
-            </div>
-            <div className="row">
-            <a href="/"><h2>HOME</h2></a>
-            </div>
-            <div className="row" id="home-row">
-              <h2>MY PROFILE</h2>
-            </div>
-          </div>
-          <div className="col-sm-9 col-xs-9 col-md-9 col-lg-9">
-           <div className="row">
-           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
-           </div>
-           <div className="row">
-            <h1 id="myBusiness">MY BUSINESSES</h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
-           </div>
-          </div>     
+        <div className="dashboardrow row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>   
         </div>
 
       )
