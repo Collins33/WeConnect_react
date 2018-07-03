@@ -136,13 +136,32 @@ class SearchResults extends Component {
         </nav>
         </div>
         <h1 className="text-center">SEARCH FOR A BUSINESS</h1>
-        <div className="col-xs-12 col-md-12 col-lg-12">
+        <div className="col-sm-12 col-xs-12 col-md-12 col-lg-12">
                 <form onSubmit={this.searchBusiness} className="text-center">
                     <div className="form-group">
                        <input className="form-control" placeholder= "Search for a business" type="text" name="search"/>
                        <a href="/search"><button className="btn btn-success">Searh for the business</button></a>
                     </div>
                 </form>
+        </div>
+
+        <div className="col-sm-12 col-xs-12 col-md-12 col-lg-12 filter-row">
+        <h1>FILTER BUSINESS</h1>
+        <div className="col-sm-4 col-xs-4 col-md-4 col-lg-4">
+        <form>
+        <div class="form-group">
+            <label for="sel1">Select business category:</label>
+              <select class="form-control" id="sel1">
+                    <option>technology</option>
+                    <option>agriculture</option>
+                    <option>retail</option>
+                    <option>fast-food</option>
+                    <option>software</option>
+                    <option>hardware</option>
+              </select>
+        </div>
+        </form>
+        </div>
         </div>
         <div className="col-xs-12 col-md-12 col-lg-12">
         {listItems}
