@@ -79,6 +79,7 @@ class SearchResults extends Component {
   filterBusiness=(e)=>{
     e.preventDefault()
     // get category from the drop down
+    this.noBusinessFound()
     this.setState({ loading: true })
     var dropdown = document.getElementById("sel1");
     var category_select = dropdown.options[dropdown.selectedIndex].text;
