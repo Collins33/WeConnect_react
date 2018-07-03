@@ -188,10 +188,6 @@ class SearchResults extends Component {
                     </div>
                 </form>
         </div>
-        <div className="col-xs-12 col-md-12 col-lg-12">
-        {listItems}
-        </div>
-
         <div className="col-sm-12 col-xs-12 col-md-12 col-lg-12 filter-row">
         <h1>FILTER BUSINESS</h1>
         <div className="col-sm-4 col-xs-4 col-md-4 col-lg-4">
@@ -213,6 +209,9 @@ class SearchResults extends Component {
         <div className="col-sm-8 col-xs-8 col-md-8 col-lg-8">
         {listItemFilter}
         </div>
+        </div>
+        <div className="col-xs-12 col-md-12 col-lg-12">
+        {listItems}
         </div>
         </div>
 
