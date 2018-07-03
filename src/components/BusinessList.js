@@ -31,7 +31,6 @@ class BusinessList extends Component {
       if (this.props.businesses.length >0){
       return (
         <div className="row business-row">
-        <a href="/addBusiness"><button className="btn btn-success">+ ADD BUSINESS</button></a>
         <h1 className="text-center">ALL BUSINESSES</h1>
         <Animated animationIn="zoomIn" animationOut="fadeOut" isVisible={true}>
           {listItems}

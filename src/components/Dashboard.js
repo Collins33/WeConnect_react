@@ -133,7 +133,7 @@ class Dashboard extends Component {
     const listItems=businesses.map(this.createBusiness)
     if (this.state.loading){
       return(
-        <div className="row dashboardrow">
+        <div className="dashboardrow container-fluid">
           <div className="col-sm-3 col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
             <div className="row">
               <h1 className="text-center title">WeConnect</h1>
