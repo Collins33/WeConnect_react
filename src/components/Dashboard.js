@@ -111,7 +111,7 @@ class Dashboard extends Component {
   createBusiness = (item) =>{
     //map each item into a column
     //return each column
-    return <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 well myBusinessRow">
+    return <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 well myBusinessRow">
       <h1 className="title text-center">{item.name}</h1>
       <h1 className="text-center well" id="businessCategory">{item.category}</h1>
       <p className="text-center">{item.description}</p>
@@ -133,27 +133,8 @@ class Dashboard extends Component {
     const listItems=businesses.map(this.createBusiness)
     if (this.state.loading){
       return(
-        <div className="row dashboardrow">
-          <div className="col-sm-3 col-xs-3 col-md-3 col-lg-3 panel dashboardcol well">
-            <div className="row">
-              <h1 className="text-center title">WeConnect</h1>
-            </div>
-            <div className="row">
-            <a href="/"><h2>HOME</h2></a>
-            </div>
-            <div className="row" id="home-row">
-              <h2>MY PROFILE</h2>
-            </div>
-          </div>
-          <div className="col-sm-9 col-xs-9 col-md-9 col-lg-9">
-           <div className="row">
-           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
-           </div>
-           <div className="row">
-            <h1 id="myBusiness">MY BUSINESSES</h1>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>
-           </div>
-          </div>     
+        <div className="dashboardrow row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" className="loaderImage"/>   
         </div>
 
       )
@@ -175,14 +156,23 @@ class Dashboard extends Component {
               <h2>MY PROFILE</h2>
             </div>
             <hr></hr>
+            <div className="row" id="home-row">
+            <a href="/businesses"><h1>ALL BUSINESSES</h1></a>
+            </div>
+            <hr></hr>
+            <div className="row" id="home-row">
+            <a href="/search"><h1>SEARCH BUSINESS</h1></a>
+            </div>
+            <hr></hr>
+            <div className="row" id="home-row">
+            <a href="/addBusiness"><button className="btn btn-success">+ ADD BUSINESS</button></a>
+            </div>
+            <hr></hr>
           </div>
           <div className="col-sm-9 col-xs-9 col-md-9 col-lg-9">
            <div className="row">
-           <div className="row">
               <h1 className="text-center title">DASHBOARD</h1>
               <hr></hr>
-            </div>
-           <a href="/addBusiness"><button className="btn btn-success addBusinessButton">+ ADD BUSINESS</button></a>
            </div>
            <div className="row">
             <h1 id="myBusiness">MY BUSINESSES</h1>
