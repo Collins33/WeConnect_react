@@ -109,6 +109,8 @@ class SearchResults extends Component {
     //get search business from the state
     const businesses = this.state.search_business
     const listItems=businesses.map(this.createBusiness)
+    const filterBusinessResults = this.state.filter_business
+    const listItemFilter = filterBusinessResults.map(this.createBusiness)
 
     if(this.state.loading){
       return(
@@ -178,6 +180,9 @@ class SearchResults extends Component {
                     </div>
                 </form>
         </div>
+        <div className="col-xs-12 col-md-12 col-lg-12">
+        {listItems}
+        </div>
 
         <div className="col-sm-12 col-xs-12 col-md-12 col-lg-12 filter-row">
         <h1>FILTER BUSINESS</h1>
@@ -197,9 +202,9 @@ class SearchResults extends Component {
         <button className="btn btn-info form-button" type="submit" onClick={this.filterBusiness}>FILTER</button>
         </form>
         </div>
+        <div className="col-sm-8 col-xs-8 col-md-8 col-lg-8">
+        {listItemFilter}
         </div>
-        <div className="col-xs-12 col-md-12 col-lg-12">
-        {listItems}
         </div>
         </div>
 
