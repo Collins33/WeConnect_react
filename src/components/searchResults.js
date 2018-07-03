@@ -71,6 +71,13 @@ class SearchResults extends Component {
     });
     
   }
+
+  filterBusiness=(e)=>{
+    e.preventDefault()
+    console.log("category")
+  }
+
+
   render() {
     //get search business from the state
     const businesses = this.state.search_business
@@ -160,6 +167,7 @@ class SearchResults extends Component {
                     <option>hardware</option>
               </select>
         </div>
+        <button className="btn btn-info form-button" type="submit" onClick={this.filterBusiness}>FILTER</button>
         </form>
         </div>
         </div>
