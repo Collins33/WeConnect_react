@@ -9,6 +9,7 @@ class SearchResults extends Component {
   state = {
     businesses:[],
     search_business:[],
+    filter_business:[],
     loading : false
   }
 
@@ -22,19 +23,20 @@ class SearchResults extends Component {
     <button className="btn btn-info" onClick={(e) => this.showBusinessDetails(item.id, e)}>Read more ...</button>
     </div>
   }
-  // method to redirect to the component displaying details about the business
+  // function to redirect to the component displaying details about the business
   showBusinessDetails = (business_id) =>{
     console.log(business_id)
     const business_detail_route = `/business/${business_id}`
     browserHistory.push(business_detail_route)   
   }
 
-  // called when the component is mounted
+  // called if no business is found
   noBusinessFound(){
     const foundBusiness = []
     const newState = Object.assign({}, this.state, {search_business: foundBusiness})
     this.setState(newState)
   }
+
   searchBusiness = async (e) =>{
     e.preventDefault()
     // set the site to start loading
@@ -71,10 +73,19 @@ class SearchResults extends Component {
     });
     
   }
-
+  // function to filter the businesses
+ // started by the filter button
   filterBusiness=(e)=>{
     e.preventDefault()
-    console.log("category")
+    // get category from the drop down
+    var dropdown = document.getElementById("sel1");
+    var category_select = dropdown.options[dropdown.selectedIndex].text;
+    const category = category_select
+    // make get request to get business in a category
+    axios.get(`https://we-connect-muru.herokuapp.com/api/v2/businesses/${category}`)
+    .then(response=>{
+      console.log(response)
+    })
   }
 
 
