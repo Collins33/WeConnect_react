@@ -36,10 +36,12 @@ class SearchResults extends Component {
     const newState = Object.assign({}, this.state, {search_business: foundBusiness})
     const newFilterState = Object.assign({}, this.state, {filter_business: foundBusiness})
     this.setState(newState)
+    this.setState(newFilterState)
   }
 
   searchBusiness = async (e) =>{
     e.preventDefault()
+    this.noBusinessFound
     // set the site to start loading
     this.setState({ loading: true })
     //get data from the form
@@ -147,7 +149,7 @@ class SearchResults extends Component {
                 <form onSubmit={this.searchBusiness} className="text-center">
                     <div className="form-group">
                        <input className="form-control" placeholder= "Search for a business" type="text" name="search"/>
-                       <a href="/search"><button className="btn btn-success">Searh for the business</button></a>
+                       <a href="/search"><button className="btn btn-success">Search for the business</button></a>
                     </div>
                 </form>
         </div>
@@ -206,9 +208,9 @@ class SearchResults extends Component {
         <button className="btn btn-info form-button" type="submit" onClick={this.filterBusiness}>FILTER</button>
         </form>
         </div>
-        <div className="col-sm-8 col-xs-8 col-md-8 col-lg-8">
-        {listItemFilter}
         </div>
+        <div className="col-sm-12 col-xs-12 col-md-12 col-lg-8">
+        {listItemFilter}
         </div>
         <div className="col-xs-12 col-md-12 col-lg-12">
         {listItems}
