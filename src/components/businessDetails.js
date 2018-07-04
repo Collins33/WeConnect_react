@@ -3,6 +3,7 @@ import {Animated} from 'react-animated-css';
 import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Navbar from './navbar'
 
 class BusinessDetails extends Component {
   state = {
@@ -143,23 +144,7 @@ createReview = (item) =>{
 
     return (
         <div className="row">
-        <nav className="navbar navbar-inverse">
-                <div className="container-fluid">
-                <div className="navbar-header">
-                    <a className="navbar-brand title" href="/">WeConnect</a>
-                </div>
-                <ul className="nav navbar-nav">
-                </ul>
-                <ul className="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/businesses">Businesses</a></li>
-                    <li><a href="/dashboard">Dashboard</a></li>
-                    <li><a href="/search">Search for business</a></li>
-                    <li><a href="signup"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="/login"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-                </div>
-        </nav>
+        <Navbar />
         {/* BUSINESS DETAILS COLUMN */}
         <div className="row businessDetailsRow">
           {listItems}
