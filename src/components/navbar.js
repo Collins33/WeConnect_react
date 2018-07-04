@@ -15,7 +15,11 @@ class Navbar extends Component {
     }
     axios.get("https://we-connect-muru.herokuapp.com/api/v2/authentication/validation",config).
     then(response=>{
+        console.log(response.data.message)
         if(response.data.message == 'Expired token. Login to get a new token'){
+            this.setState({authentication:true})
+        }
+        else if (response.data.message == 'Invalid token. Please register or login'){
             this.setState({authentication:true})
         }
         else{
