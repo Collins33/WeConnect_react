@@ -67,7 +67,6 @@ else{
                         <li><a href="/businesses">Businesses</a></li>
                         <li><a href="/dashboard">Dashboard</a></li>
                         <li><a href="/search">Search for business</a></li>
-                        
                     </ul>
                 </div>
             </nav>
