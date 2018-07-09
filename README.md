@@ -20,7 +20,7 @@ This is a platform for users to interact with businesses and give reviews for se
 
 -npm
 
-# Built by
+# Built with
 
 -Reactjs
 
