@@ -4,7 +4,6 @@ import { render } from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
-import About from './components/About';
 import Dashboard from './components/Dashboard';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -20,7 +19,6 @@ import UpdateBusiness from './components/updateBusiness';
 render(
   <Router history={browserHistory}>
     <Route path="/" component={App} />
-    <Route path="/about" component={About} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/signup" component={Signup} />
     <Route path="/login" component={Login} />
