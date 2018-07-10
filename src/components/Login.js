@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 class Login extends Component {
     state = {
-        login:[]
+        
     }
     login = (e) =>{
         e.preventDefault()
