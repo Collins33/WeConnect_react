@@ -6,8 +6,6 @@ import Intro from './Intro'
 class App extends Component {
   //set the default State object
   state = {
-    businesses:[],
-    search_business:[]
   }
 
   render() {
