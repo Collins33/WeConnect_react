@@ -4,6 +4,9 @@ import Dashboard from '../components/Dashboard';
 
 describe('<Dashboard />', () => {
      const wrapper = shallow(<Dashboard />);
+     const data = [{
+ name: 'collins', contact: '07028484032', location: 'thika', id: 1 
+}];
      it('contains divs', () => {
           expect(wrapper.find('div').length).toEqual(1);
      });
@@ -18,5 +21,11 @@ describe('<Dashboard />', () => {
           const componentInstance = wrapper.instance();
           componentInstance.updateBusiness(1);
           expect(componentInstance.state.buttonClicked).toEqual('clicked');
+     });
+
+     it('changes state data is mapped', () => {
+          const componentInstance = wrapper.instance();
+          componentInstance.createBusiness(data)
+          expect(componentInstance.state.map).toEqual(false);
      });
 });

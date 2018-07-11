@@ -6,9 +6,13 @@ import swal from 'sweetalert';
 import Navbar from './navbar'
 
 class BusinessDetails extends Component {
+ 
   state = {
     businesses: [],
-    reviews: []
+    reviews: [],
+    businessFound: false,
+    reviewsFound: false,
+    testId:1
   }
   componentDidMount(){
     // method is called when component is mounted

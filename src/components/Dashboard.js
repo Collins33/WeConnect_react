@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { browserHistory} from 'react-router';
@@ -10,7 +8,8 @@ class Dashboard extends Component {
   state = {
     businesses: [],
     loading: true,
-    buttonClicked:""
+    buttonClicked:"",
+    map:false
   }
 
   // add the componentDidMount lifecylce method
@@ -127,7 +126,6 @@ class Dashboard extends Component {
       <button className="btn btn-info form-button" type="submit" onClick={(e) => this.updateBusiness(item.id, e)}>UPDATE BUSINESS</button>
       </div>
       </div>
-      
 }
 
 
