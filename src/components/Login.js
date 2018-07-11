@@ -6,10 +6,11 @@ import swal from 'sweetalert';
 
 class Login extends Component {
     state = {
-        
+        buttonClicked:""
     }
     login = (e) =>{
         e.preventDefault()
+        this.setState({buttonClicked:"clicked"})
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
         
@@ -31,9 +32,9 @@ class Login extends Component {
               });
         })
         .catch(error =>{
-            if (error.response.status === 401){
-                swal("Error!!", "Invalid email or password", "error");
-            }
+            // if (error.response.status === 401){
+            //     swal("Error!!", "Invalid email or password", "error");
+            // }
         });
     }
 
