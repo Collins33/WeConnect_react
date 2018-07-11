@@ -35,7 +35,7 @@ This is a platform for users to interact with businesses and give reviews for se
 
 ## License
 
-This project is licensed under the MIT License 
+This project is licensed under the MIT License. 
 
 
 
