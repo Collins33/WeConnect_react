@@ -5,11 +5,12 @@ import swal from 'sweetalert';
 
 class Reset extends Component {
     state = {
-
+        buttonClicked:""
     }
     
     reset= (e) => {
         e.preventDefault()
+        this.setState({buttonClicked:"clicked"})
         const email = e.target.elements.email.value;
         axios.post('https://we-connect-muru.herokuapp.com/api/v2/auth/reset-password', {
             email: email,

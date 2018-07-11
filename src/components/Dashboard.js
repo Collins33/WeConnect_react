@@ -9,7 +9,8 @@ import { browserHistory} from 'react-router';
 class Dashboard extends Component {
   state = {
     businesses: [],
-    loading: true
+    loading: true,
+    buttonClicked:""
   }
 
   // add the componentDidMount lifecylce method
@@ -47,28 +48,29 @@ class Dashboard extends Component {
     })
     .catch(error => {
       // alerts if there is an error
-      if (error.response.status === 409){
-        swal("Error!!", "Business name already exists. Use a different name", "error");
-        browserHistory.push('/login')
-      }
-      else if(error.response.status === 400){
-          swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
-          browserHistory.push('/login')
-      }
-      else if(error.response.status === 403){
-          swal("Error!!", "You must be logged in to use the dashboard,", "error");
-          browserHistory.push('/login')
-      }
-      else if(error.response.status === 500){
-          swal("Error!!", "You must be logged in to use the dashboard,", "error");
-          browserHistory.push('/login')
-      }
+      // if (error.response.status === 409){
+      //   swal("Error!!", "Business name already exists. Use a different name", "error");
+      //   browserHistory.push('/login')
+      // }
+      // else if(error.response.status === 400){
+      //     swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
+      //     browserHistory.push('/login')
+      // }
+      // else if(error.response.status === 403){
+      //     swal("Error!!", "You must be logged in to use the dashboard,", "error");
+      //     browserHistory.push('/login')
+      // }
+      // else if(error.response.status === 500){
+      //     swal("Error!!", "You must be logged in to use the dashboard,", "error");
+      //     browserHistory.push('/login')
+      // }
     });
   }
 
   // function to delete single business
   deleteBusiness = (business_id)=>{
     console.log(business_id)
+    this.setState({buttonClicked:"clicked"})
     const auth_token = localStorage.getItem("auth_token")
     const config = {
       // config with the token
@@ -103,6 +105,7 @@ class Dashboard extends Component {
   // function to update business details
   updateBusiness = (business_id,e)=>{
     console.log(business_id)
+    this.setState({buttonClicked:"clicked"})
     const business_update_route = `/business/${business_id}/updateBusiness`
     browserHistory.push(business_update_route)  
   }

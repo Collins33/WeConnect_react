@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 import Navbar from './navbar'
 import Intro from './Intro'
-import axios from "axios";
-
 
 class App extends Component {
   //set the default State object
