@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 import axios from 'axios';
 import { browserHistory} from 'react-router';
 import swal from 'sweetalert';

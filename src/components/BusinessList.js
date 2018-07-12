@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
-import '../App.css';
 import {Animated} from 'react-animated-css';
 import { browserHistory} from 'react-router';
 

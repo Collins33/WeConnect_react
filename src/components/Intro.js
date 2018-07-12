@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
-import '../App.css';
+
 
 class Intro extends Component {
   state = {

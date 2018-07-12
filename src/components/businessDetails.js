@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
-import '../App.css';
 import axios from 'axios';
 import swal from 'sweetalert';
 import Navbar from './navbar'
