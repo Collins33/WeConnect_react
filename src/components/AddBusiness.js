@@ -48,22 +48,7 @@ class AddBusiness extends Component {
             button: "Explore",
           });
         }).catch(error => {
-            // alerts if there is an error
-            // if (error.response.status === 409){
-            //     swal("Error!!", "Business name already exists. Use a different name", "error");
-            // }
-            // else if(error.response.status === 400){
-            //     swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
-            // }
-            // else if(error.response.status === 403){
-            //     swal("Error!!", "You must be logged in to add a business,", "error");
-            //     browserHistory.push('/login')
-            // }
-            // else if(error.response.status === 500){
-            //     swal("Error!!", "You must be logged in to add a business,", "error");
-            //     browserHistory.push('/login')
-                
-            // }
+            swal("Error!!", "Invalid inputs", "error");
         });
     }
 
