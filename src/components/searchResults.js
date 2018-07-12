@@ -11,7 +11,10 @@ class SearchResults extends Component {
     businesses:[],
     search_business:[],
     filter_business:[],
-    loading : false
+    loading : false,
+    map:false,
+    buttonClicked:"",
+    foundBusiness:true
   }
 
   createBusiness = (item) =>{
@@ -27,6 +30,7 @@ class SearchResults extends Component {
   // function to redirect to the component displaying details about the business
   showBusinessDetails = (business_id) =>{
     console.log(business_id)
+    this.setState({buttonClicked:"clicked"})
     const business_detail_route = `/business/${business_id}`
     browserHistory.push(business_detail_route)   
   }
@@ -38,10 +42,12 @@ class SearchResults extends Component {
     const newFilterState = Object.assign({}, this.state, {filter_business: foundBusiness})
     this.setState(newState)
     this.setState(newFilterState)
+    this.setState({foundBusiness:false})
   }
 
   searchBusiness = async (e) =>{
     e.preventDefault()
+    this.setState({buttonClicked:"clicked"})
     this.noBusinessFound
     // set the site to start loading
     this.setState({ loading: true })
@@ -69,11 +75,11 @@ class SearchResults extends Component {
       
     })
     .catch(error => {
-      if (error.response.status === 404){
-        swal("Error!!", "Business does not exist", "error");
-        this.noBusinessFound()
-        this.setState({ loading: false })
-      }
+      // if (error.response.status === 404){
+      //   swal("Error!!", "Business does not exist", "error");
+      //   this.noBusinessFound()
+      //   this.setState({ loading: false })
+      // }
     });
     
   }
@@ -81,6 +87,7 @@ class SearchResults extends Component {
  // started by the filter button
   filterBusiness=(e)=>{
     e.preventDefault()
+    this.setState({buttonClicked:"clicked"})
     // get category from the drop down
     this.noBusinessFound()
     this.setState({ loading: true })
@@ -162,10 +169,10 @@ class SearchResults extends Component {
         <div className="col-sm-12 col-xs-12 col-md-12 col-lg-12 filter-row">
         <h1>FILTER BUSINESS</h1>
         <div className="col-sm-4 col-xs-4 col-md-4 col-lg-4">
-        <form>
-        <div class="form-group">
+        <form id="filterForm">
+        <div className="form-group">
             <label for="sel1">Select business category:</label>
-              <select class="form-control" id="sel1">
+              <select className="form-control" id="sel1">
                     <option>technology</option>
                     <option>agriculture</option>
                     <option>retail</option>

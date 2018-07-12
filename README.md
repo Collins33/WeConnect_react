@@ -1,6 +1,6 @@
 # WeConnect
 
-This is a platform for users to interact with businesses and give reviews for services offered or any general reviews.
+This is a platform for users to interact with businesses and give reviews for services offered or any general reviews. The platform is free and anyone can use.
 
 [![Build Status](https://travis-ci.org/Collins33/WeConnect_react.svg?branch=master)](https://travis-ci.org/Collins33/WeConnect_react)
 
@@ -35,7 +35,7 @@ This is a platform for users to interact with businesses and give reviews for se
 
 ## License
 
-This project is licensed under the MIT License 
+This project is licensed under the MIT License. 
 
 
 

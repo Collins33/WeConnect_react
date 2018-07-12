@@ -7,11 +7,12 @@ import { browserHistory} from 'react-router';
 
 class Signup extends Component {
     state = {
-        registration:[]
+        buttonClicked:""
     }
    
     signUp = (e) =>{
         e.preventDefault()
+        this.setState({buttonClicked:"clicked"})
         const email = e.target.elements.email.value;
         const password = e.target.elements.password.value;
         const confirm_password = e.target.elements.confirm_password.value;
@@ -29,17 +30,22 @@ class Signup extends Component {
                 icon: "success",
                 button: "Log in",
               });
+              console.log(this.state)  
         })
         .catch(error => {
-            if (error.response.status === 409){
-                const message = error.response.data.message
-                swal("Error!!", message, "error");
-            }
-            else if(error.response.status === 400){
-                const message = error.response.data[0].message
-                console.log(message)
-                swal("Error!!", message, "error");
-            }
+            // if (error.response.status === 409){
+            //     this.setState({buttonClicked:"clicked"})
+            //     const message = error.response.data.message
+            //     swal("Error!!", message, "error");
+            //     console.log(this.state)
+            // }
+            // else if(error.response.status === 400){
+            //     this.setState({buttonClicked:"clicked"})
+            //     const message = error.response.data[0].message
+            //     console.log(message)
+            //     swal("Error!!", message, "error");
+            //     console.log(this.state)
+            // }
             
         });
     }

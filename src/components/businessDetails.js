@@ -6,9 +6,13 @@ import swal from 'sweetalert';
 import Navbar from './navbar'
 
 class BusinessDetails extends Component {
+ 
   state = {
     businesses: [],
-    reviews: []
+    reviews: [],
+    businessFound: false,
+    reviewsFound: false,
+    testId:1
   }
   componentDidMount(){
     // method is called when component is mounted
@@ -161,9 +165,9 @@ createReview = (item) =>{
                 <div className="form-group">
                     <input className="form-control" placeholder="enter business review" id="name-field" type="name" name="businessOpinion" />
                 </div>                
-                <div class="form-group">
+                <div className="form-group">
                 <label for="sel1">Select business rating:</label>
-                <select class="form-control" id="sel1">
+                <select className="form-control" id="sel1">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

@@ -7,9 +7,11 @@ import { browserHistory} from 'react-router';
 
 class AddBusiness extends Component {
     state = {
+        buttonClicked:""
     }
     addBusiness= (e)=>{
         e.preventDefault()
+        this.setState({buttonClicked:"clicked"})
         // method to add business
         // get token from localstorage
         const auth_token = localStorage.getItem("auth_token")
@@ -48,21 +50,21 @@ class AddBusiness extends Component {
           });
         }).catch(error => {
             // alerts if there is an error
-            if (error.response.status === 409){
-                swal("Error!!", "Business name already exists. Use a different name", "error");
-            }
-            else if(error.response.status === 400){
-                swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
-            }
-            else if(error.response.status === 403){
-                swal("Error!!", "You must be logged in to add a business,", "error");
-                browserHistory.push('/login')
-            }
-            else if(error.response.status === 500){
-                swal("Error!!", "You must be logged in to add a business,", "error");
-                browserHistory.push('/login')
+            // if (error.response.status === 409){
+            //     swal("Error!!", "Business name already exists. Use a different name", "error");
+            // }
+            // else if(error.response.status === 400){
+            //     swal("Error!!", "Credentials are invalid. Ensure all fields are present,", "error");
+            // }
+            // else if(error.response.status === 403){
+            //     swal("Error!!", "You must be logged in to add a business,", "error");
+            //     browserHistory.push('/login')
+            // }
+            // else if(error.response.status === 500){
+            //     swal("Error!!", "You must be logged in to add a business,", "error");
+            //     browserHistory.push('/login')
                 
-            }
+            // }
         });
     }
 

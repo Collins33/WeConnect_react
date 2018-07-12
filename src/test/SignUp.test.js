@@ -1,20 +1,17 @@
 import SignUp from '../components/Signup';
+import { MemoryRouter } from 'react-router-dom';
+import { shallow, mount, render } from 'enzyme';
+import { stub } from 'sinon';
 
-describe('it renders the signup component',()=>{
-    const wrapper = shallow(<SignUp/>);
-    
-    it('contains the signup form',()=>{
-        expect(wrapper.find("form").exists()).toBe(true);
-    });
-    it('contains the row to hold the form',()=>{
-        expect(wrapper.find("div.row").exists()).toBe(true);
-    });
-    it('contains a button to submit the form',()=>{
-       const signupButton = <button className="btn btn-info form-button" type="submit">SIGN UP</button>;
-       expect(wrapper.contains(signupButton)).toBe(true);
-    });
-    it('contains the signup text',()=>{
-        const signupText = <h1 className="text-center">SIGN-UP</h1>;
-        expect(wrapper.contains(signupText)).toBe(true);
-    });
-})
+describe('Signup age component', () => {
+     const wrapper = shallow(<SignUp />);
+     it('contains div', () => {
+          expect(wrapper.find('div').length).toEqual(6);
+     });
+     it('should change state when form is submitted', () => {
+          const component = mount(<SignUp />);
+          component.find('form').simulate('submit');
+          const instance = component.find(SignUp).instance();
+          expect(instance.state.buttonClicked).toEqual('clicked');
+     });
+});

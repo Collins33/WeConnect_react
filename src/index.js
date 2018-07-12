@@ -2,7 +2,7 @@ import React from 'react';
 import { browserHistory, Router, Route } from 'react-router';
 import { render } from 'react-dom';
 import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+
 import App from './components/App';
 import Dashboard from './components/Dashboard';
 import Signup from './components/Signup';
@@ -31,6 +31,3 @@ render(
   </Router>,
 document.getElementById('root'),
 );
-
-// service workers give the app offline capabilities
-registerServiceWorker();

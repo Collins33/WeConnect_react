@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`landing page renders renders business update form 1`] = `
+<Animated
+  animateOnMount={true}
+  animationIn="zoomIn"
+  animationInDelay={0}
+  animationOut="fadeOut"
+  animationOutDelay={0}
+  className=""
+  isVisible={true}
+  style={Object {}}
+>
+  <div
+    className="row intro"
+  >
+    <h1
+      className="text-center intro-text title"
+    >
+      WeConnect
+    </h1>
+    <h2
+      className="text-center intro-text"
+    >
+      A new way to connect with businesses around you
+    </h2>
+    <a
+      href="/businesses"
+    >
+      <button
+        class="btn btn-dark intro-button"
+      >
+        EXPLORE
+      </button>
+    </a>
+  </div>
+</Animated>
+`;

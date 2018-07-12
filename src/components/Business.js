@@ -7,11 +7,13 @@ import Navbar from './navbar'
 class Business extends Component {
   // set the default state object
   state = {
-    businesses: []
+    businesses: [],
+    component: false
   }
   // add the componentDidMount lifecylce method
   componentDidMount(){
     const auth_token = localStorage.getItem("auth_token")
+    this.setState({component:true})
     axios.get("https://we-connect-muru.herokuapp.com/api/v2/businesses")
     .then(response =>{
       // this one is executed immediately the data returns from the backend
