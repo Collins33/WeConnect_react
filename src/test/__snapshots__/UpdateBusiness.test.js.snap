@@ -11,7 +11,7 @@ exports[`Update business page renders renders business update form 1`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "6xq3oe",
+          "key": "bwf9b5",
           "pathname": "/business/2",
           "search": "",
           "state": undefined,
@@ -25,7 +25,7 @@ exports[`Update business page renders renders business update form 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "6xq3oe",
+        "key": "bwf9b5",
         "pathname": "/business/2",
         "search": "",
         "state": undefined,

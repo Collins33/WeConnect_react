@@ -2,31 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Navbar extends Component {
-  state = {
-   authentication: false
-  }
-
-//   componentDidMount(){
-//     const auth_token = localStorage.getItem("auth_token")
-//     const config = {
-//       // config with the token
-//       headers: {'Authorization': "bearer " + auth_token}
-//     }
-//     axios.get("https://we-connect-muru.herokuapp.com/api/v2/authentication/validation",config).
-//     then(response=>{
-//         // console.log(response.data.message)
-//         // if(response.data.message == 'Expired token. Login to get a new token'){
-//         //     this.setState({authentication:true})
-//         // }
-//         // else if (response.data.message == 'Invalid token. Please register or login'){
-//         //     this.setState({authentication:true})
-//         // }
-//         // else{
-//         //     this.setState({authentication:false})
-//         // }
-//     })
-//   }
-
+  
   render() {
     return (
         <div className="row">
