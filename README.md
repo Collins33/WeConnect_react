@@ -1,9 +1,8 @@
 # WeConnect
 
-This is a platform for users to interact with businesses and give reviews for services offered or any general reviews. The platform is free and anyone can use and share.
-
 [![Build Status](https://travis-ci.org/Collins33/WeConnect_react.svg?branch=master)](https://travis-ci.org/Collins33/WeConnect_react)  [![Coverage Status](https://coveralls.io/repos/github/Collins33/WeConnect_react/badge.svg?branch=master&service=github)](https://coveralls.io/github/Collins33/WeConnect_react?branch=master)
 
+This is a platform for users to interact with businesses and give reviews for services offered or any general reviews. The platform is free and anyone can use and share.
 
 
 # Getting started
@@ -15,6 +14,10 @@ This is a platform for users to interact with businesses and give reviews for se
 -npm install
 
 -npm start
+
+# Running tests
+-npm test -- -u --coverage
+
 
 # Prerequisites
 
