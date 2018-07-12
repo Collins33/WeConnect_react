@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Update business page renders renders business update form 1`] = `
+exports[`<BusinessDetails /> renders business details 1`] = `
 <Router
   history={
     Object {
@@ -11,7 +11,7 @@ exports[`Update business page renders renders business update form 1`] = `
       "entries": Array [
         Object {
           "hash": "",
-          "key": "btsvns",
+          "key": "7q2zah",
           "pathname": "/business/2",
           "search": "",
           "state": undefined,
@@ -25,7 +25,7 @@ exports[`Update business page renders renders business update form 1`] = `
       "listen": [Function],
       "location": Object {
         "hash": "",
-        "key": "btsvns",
+        "key": "7q2zah",
         "pathname": "/business/2",
         "search": "",
         "state": undefined,
@@ -35,6 +35,6 @@ exports[`Update business page renders renders business update form 1`] = `
     }
   }
 >
-  <UpdateBusiness />
+  <BusinessDetails />
 </Router>
 `;

@@ -1,20 +1,13 @@
-import sinon from 'sinon';
-import { shallow, mount, render } from 'enzyme';
 import BusinessDetails from '../components/businessDetails';
 import { MemoryRouter } from 'react-router-dom';
+import { shallow, mount, render } from 'enzyme';
 
 
 describe('<BusinessDetails />', () => { 
-    //  const wrapper = shallow(
-    //     <BusinessDetails
-    //       match={{params: {id: 1}}}
-    //     />,
-    //   );
-
-     it('gets the initial state', () => {
-          //   const component = mount(<BusinessDetails />);
-          //   const instance = wrapper.find(BusinessDetails).instance;
-          expect()
-     });
+    const wrapper = render(<MemoryRouter href="http://business/2"><BusinessDetails/></MemoryRouter>);
+    
+    it('renders business details', () => {
+        expect(shallow(<MemoryRouter initialEntries={['/business/2']}><BusinessDetails /></MemoryRouter>)).toMatchSnapshot();
+   });
 });
 
