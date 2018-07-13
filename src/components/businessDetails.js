@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
 import axios from 'axios';
 import swal from 'sweetalert';
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 class BusinessDetails extends Component {
  
