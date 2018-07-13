@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import { shallow, mount, render } from 'enzyme';
-import SearchResults from '../components/searchResults';
+import SearchResults from '../components/SearchResults';
 
 describe('<SearchResults', () => {
      const wrapper = shallow(<SearchResults />);

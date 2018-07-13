@@ -1,4 +1,4 @@
-import BusinessDetails from '../components/businessDetails';
+import BusinessDetails from '../components/BusinessDetails';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow, mount, render } from 'enzyme';
 

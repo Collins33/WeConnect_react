@@ -3,16 +3,16 @@ import { browserHistory, Router, Route } from 'react-router';
 import { render } from 'react-dom';
 import './index.css';
 
-import App from './components/App';
+import App from './App'
 import Dashboard from './components/Dashboard';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import SearchResults from './components/searchResults';
+import SearchResults from './components/SearchResults';
 import Business from './components/Business';
 import Reset from './components/Reset';
 import AddBusiness from './components/AddBusiness';
-import BusinessDetails from './components/businessDetails';
-import UpdateBusiness from './components/updateBusiness';
+import BusinessDetails from './components/BusinessDetails';
+import UpdateBusiness from './components/UpdateBusiness';
 // components for routing
 
 

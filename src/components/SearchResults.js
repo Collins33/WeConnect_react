@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { browserHistory} from 'react-router';
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 class SearchResults extends Component {
   state = {

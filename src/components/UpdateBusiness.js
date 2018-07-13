@@ -3,7 +3,7 @@ import {Animated} from 'react-animated-css';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { browserHistory} from 'react-router';
-import Navbar from './navbar'
+import Navbar from './Navbar'
 
 class UpdateBusiness extends Component {
   constructor() {

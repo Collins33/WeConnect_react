@@ -1,6 +1,6 @@
 import sinon from 'sinon';
 import { shallow, mount, render } from 'enzyme';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 
 describe('<Navbar />', () => {
      const wrapper = shallow(<Navbar />);
