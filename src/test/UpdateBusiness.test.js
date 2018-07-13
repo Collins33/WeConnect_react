@@ -1,4 +1,4 @@
-import UpdateBusiness from '../components/updateBusiness';
+import UpdateBusiness from '../components/UpdateBusiness';
 import { MemoryRouter } from 'react-router-dom';
 import { shallow, mount, render } from 'enzyme';
 
